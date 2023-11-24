@@ -1,0 +1,51 @@
+@import 'material';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Barlow, sans-serif;
+}
+
+// To accomodate for the footer height
+.toast-bottom-right {
+  bottom: 54px !important;
+}
+
+// Remove min-width from icon only buttons, so that they can be styled freely
+[mat-button].icon-only {
+  min-width: auto !important;
+}
+
+a[mat-button].icon-only {
+  display: flex;
+  align-items: center;
+}
+
+.icon-only.rounded {
+  border-radius: 50%;
+}
+
+.mat-mdc-tooltip {
+  font-size: 13px !important;
+  white-space: pre-line;
+}
+
+.mdc-button__label {
+  white-space: nowrap;
+}
+
+// Ein Icon innerhalb eines Button wird seit Angular-Material-MDC viel zu klein angezeigt.
+// Angular Material wendet diesen Selektor an, wenn sich ein mat-icon innerhalb eines mat-button befindet.
+// Hiermit wird applikationsübergreifend die Größe von Icons innerhalb von Buttons verändert.
+[mat-button].mat-mdc-button > .mat-icon {
+  font-size: 1.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 0;
+}
+
+
+
