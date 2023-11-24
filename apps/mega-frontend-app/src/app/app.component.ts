@@ -5,7 +5,7 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 @Component({
   standalone: true,
   imports: [NxWelcomeComponent, RouterModule],
-  selector: 'mega-frontend-app-root',
+  selector: 'mega-app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

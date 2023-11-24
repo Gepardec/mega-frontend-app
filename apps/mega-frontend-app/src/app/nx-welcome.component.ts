@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'mega-frontend-app-nx-welcome',
+  selector: 'mega-app-nx-welcome',
   standalone: true,
   imports: [CommonModule],
   template: `

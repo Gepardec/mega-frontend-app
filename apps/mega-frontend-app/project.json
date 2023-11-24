@@ -2,7 +2,7 @@
   "name": "mega-frontend-app",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "mega-frontend-app",
+  "prefix": "mega-app",
   "sourceRoot": "apps/mega-frontend-app/src",
   "tags": [],
   "targets": {

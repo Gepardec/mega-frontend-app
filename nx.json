@@ -55,11 +55,14 @@
       "style": "scss",
       "linter": "eslint",
       "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
+      "e2eTestRunner": "cypress",
+      "projectNameAndRootFormat": "derived"
     },
     "@nx/angular:library": {
+      "style": "scss",
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "projectNameAndRootFormat": "derived"
     },
     "@nx/angular:component": {
       "style": "scss"
