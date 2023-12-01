@@ -88,6 +88,35 @@
         "buildTarget": "mega-frontend-app:build",
         "staticFilePath": "dist/apps/mega-frontend-app/browser"
       }
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "apps/mega-frontend-app/.storybook",
+        "browserTarget": "mega-frontend-app:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/mega-frontend-app",
+        "configDir": "apps/mega-frontend-app/.storybook",
+        "browserTarget": "mega-frontend-app:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
     }
   }
 }
