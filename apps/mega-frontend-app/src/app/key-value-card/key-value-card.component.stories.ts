@@ -10,6 +10,12 @@ type Story = StoryObj<KeyValueCardComponent>;
 
 export const Primary: Story = {
   args: {
-    input: '',
+    title: '',
+    data: [
+      {
+        key: 'key',
+        value: 'value',
+      },
+    ],
   },
 };

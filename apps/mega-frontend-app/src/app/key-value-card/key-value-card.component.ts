@@ -1,18 +1,24 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'mega-app-key-value-card',
   standalone: true,
-  imports: [CommonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, MatCardModule],
   templateUrl: './key-value-card.component.html',
   styleUrls: ['./key-value-card.component.scss'],
 })
-export class KeyValueCardComponent implements OnInit {
-  @Input()
-  input!: string;
+export class KeyValueCardComponent {
+  @Input({ required: true })
+  data!: [
+    {
+      key: string;
+      value: string;
+    }
+  ];
 
-  ngOnInit(): void {
-    console.log(this.input);
-  }
+  @Input({ required: true })
+  title!: string;
 }
