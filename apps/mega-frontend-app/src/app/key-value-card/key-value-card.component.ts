@@ -1,24 +1,26 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
+import { KeyValueModel } from './key-value-model';
 
 @Component({
   selector: 'mega-app-key-value-card',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, MatCardModule],
+  imports: [CommonModule, MatCardModule, NgOptimizedImage],
   templateUrl: './key-value-card.component.html',
   styleUrls: ['./key-value-card.component.scss'],
 })
 export class KeyValueCardComponent {
   @Input({ required: true })
-  data!: [
-    {
-      key: string;
-      value: string;
-    }
-  ];
+  data!: KeyValueModel[];
 
   @Input({ required: true })
   title!: string;
+
+  @Input({ required: true })
+  link!: string;
+
+  @Input({ required: true })
+  linkDisplayName!: string;
 }

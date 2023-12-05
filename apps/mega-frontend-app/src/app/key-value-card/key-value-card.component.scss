@@ -1,0 +1,17 @@
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.absolute-top-right {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}

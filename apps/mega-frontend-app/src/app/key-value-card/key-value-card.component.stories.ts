@@ -8,14 +8,32 @@ const meta: Meta<KeyValueCardComponent> = {
 export default meta;
 type Story = StoryObj<KeyValueCardComponent>;
 
-export const Primary: Story = {
+export const Abwesenheiten: Story = {
   args: {
-    title: '',
+    title: 'Abwesenheiten',
     data: [
       {
-        key: 'key',
-        value: 'value',
+        key: 'Urlaub',
+        value: '2',
+        unit: 'Tage',
+      },
+      {
+        key: 'Krankenstand',
+        value: '3',
+        unit: 'Tage',
+      },
+      {
+        key: 'Home',
+        value: '3',
+        unit: 'Tage',
+      },
+      {
+        key: 'Andere Abwesenheit',
+        value: '5',
+        unit: 'Stunden',
       },
     ],
+    link: '#',
+    linkDisplayName: 'Personio',
   },
 };
