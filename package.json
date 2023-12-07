@@ -2,7 +2,10 @@
   "name": "@mega-frontend-app/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "storybook_generate": "npx nx g @nx/angular:stories --project=mega-frontend-app",
+    "storybook_serve": "npx nx run mega-frontend-app:storybook"
+  },
   "private": true,
   "dependencies": {
     "nx": "17.1.2",

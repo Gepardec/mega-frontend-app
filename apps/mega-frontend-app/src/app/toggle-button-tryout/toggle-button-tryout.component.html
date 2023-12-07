@@ -1,0 +1,12 @@
+<mega-app-nice-toggle-button
+  [selectableOptions]="selectableOptions"
+  [(selected)]="current"
+  (selectedChange)="handleSelectChange($event)"
+></mega-app-nice-toggle-button>
+
+<div>
+  current: <span>{{ current }}</span>
+</div>
+
+<input #inp />
+<button (click)="current = inp.value; inp.value = ''">update</button>

@@ -1,0 +1,16 @@
+@use '@angular/material' as mat;
+@import '../../styles/material';
+
+// black-ish
+$text: #{mat.get-theme-color($mega-dark-theme, primary, default-contrast)};
+
+// yellow-ish
+$background: #{mat.get-theme-color($mega-dark-theme, primary, default)};
+
+:host {
+  --mat-standard-button-toggle-shape: 20px;
+  --mat-standard-button-toggle-selected-state-background-color: #{$background};
+  --mat-standard-button-toggle-selected-state-text-color: #{$text};
+  --mat-standard-button-toggle-divider-color: #{$background};
+  --mat-standard-button-toggle-text-color: #{$background};
+}
