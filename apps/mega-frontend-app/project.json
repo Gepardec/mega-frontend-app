@@ -4,7 +4,7 @@
   "projectType": "application",
   "prefix": "mega-app",
   "sourceRoot": "apps/mega-frontend-app/src",
-  "tags": [],
+  "tags": ["scope:app"],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",

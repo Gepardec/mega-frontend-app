@@ -59,14 +59,18 @@
       "projectNameAndRootFormat": "derived"
     },
     "@nx/angular:library": {
-      "style": "scss",
       "linter": "eslint",
       "unitTestRunner": "jest",
+      "style": "scss",
       "projectNameAndRootFormat": "derived"
     },
     "@nx/angular:component": {
       "style": "scss"
     }
   },
-  "nxCloudAccessToken": "ZjcyODM4MjMtODZhNi00NzQwLThlZmItOTRhYjljOTMwMTBmfHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "ZjcyODM4MjMtODZhNi00NzQwLThlZmItOTRhYjljOTMwMTBmfHJlYWQtd3JpdGU=",
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "libs"
+  }
 }

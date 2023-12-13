@@ -1,0 +1,27 @@
+{
+  "name": "employee-util",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/employee/util/src",
+  "prefix": "mega-employee-util",
+  "tags": ["domain:employee", "type:util"],
+  "projectType": "library",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/employee/util/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/employee/util/**/*.ts",
+          "libs/employee/util/**/*.html"
+        ]
+      }
+    }
+  }
+}
