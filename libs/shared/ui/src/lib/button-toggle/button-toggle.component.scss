@@ -12,3 +12,12 @@ $contrast: #{mat.get-theme-color($mega-dark-theme, primary, default-contrast)};
   --mat-standard-button-toggle-text-color: #{$primary};
   --mat-standard-button-toggle-background-color: transparent;
 }
+
+label {
+  display: flex;
+  align-items: center;
+}
+
+.label-text {
+  margin-left: 5px;
+}

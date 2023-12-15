@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { ButtonToggleComponent } from './button-toggle.component';
+import {
+  ButtonToggleComponent,
+  ButtonToggleOption,
+} from './button-toggle.component';
 
 const meta: Meta<ButtonToggleComponent> = {
   component: ButtonToggleComponent,
@@ -8,10 +11,13 @@ const meta: Meta<ButtonToggleComponent> = {
 export default meta;
 type Story = StoryObj<ButtonToggleComponent>;
 
-const selectableOptions = ['Mein Mega', 'Controlling'];
+const selectableOptions: ButtonToggleOption[] = [
+  { label: '', value: 'mein-mega', icon: 'home' },
+  { label: 'Controlling', value: 'controlling', icon: 'account_balance' },
+];
 export const Primary: Story = {
   args: {
     selectableOptions: selectableOptions,
-    selected: selectableOptions[0],
+    selected: selectableOptions[0].value,
   },
 };

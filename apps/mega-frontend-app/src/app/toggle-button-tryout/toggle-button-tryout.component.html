@@ -1,8 +1,10 @@
-<mega-shared-ui-button-toggle
-  [selectableOptions]="selectableOptions"
-  [(selected)]="current"
-  (selectedChange)="handleSelectChange($event)"
-></mega-shared-ui-button-toggle>
+<section style="background: #2a2a2a; padding: 10px">
+  <mega-shared-ui-button-toggle
+    [selectableOptions]="selectableOptions"
+    [(selected)]="current"
+    (selectedChange)="handleSelectChange($event)"
+  ></mega-shared-ui-button-toggle>
+</section>
 
 <div>
   current: <span>{{ current }}</span>
@@ -10,3 +12,21 @@
 
 <input #inp />
 <button (click)="current = inp.value; inp.value = ''">update</button>
+
+<hr />
+<section style="background: #2a2a2a; padding: 10px">
+  <mega-shared-ui-button-toggle
+    [selectableOptions]="selectableIconOptions"
+    [(selected)]="currentIconVal"
+    (selectedChange)="handleSelectChange($event)"
+  ></mega-shared-ui-button-toggle>
+</section>
+
+<hr />
+<section style="background: black; padding: 10px">
+  <mega-shared-ui-button-toggle
+    [selectableOptions]="selectableMixedOptions"
+    [(selected)]="currenMixedVal"
+    (selectedChange)="handleSelectChange($event)"
+  ></mega-shared-ui-button-toggle>
+</section>
