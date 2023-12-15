@@ -95,7 +95,10 @@
         "port": 4400,
         "configDir": "apps/mega-frontend-app/.storybook",
         "browserTarget": "mega-frontend-app:build-storybook",
-        "compodoc": false
+        "compodoc": false,
+        "styles": [
+          "apps/mega-frontend-app/src/styles.scss"
+        ]
       },
       "configurations": {
         "ci": {
@@ -105,7 +108,9 @@
     },
     "build-storybook": {
       "executor": "@storybook/angular:build-storybook",
-      "outputs": ["{options.outputDir}"],
+      "outputs": [
+        "{options.outputDir}"
+      ],
       "options": {
         "outputDir": "dist/storybook/mega-frontend-app",
         "configDir": "apps/mega-frontend-app/.storybook",
