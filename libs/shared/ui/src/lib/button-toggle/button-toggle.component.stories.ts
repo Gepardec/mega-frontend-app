@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { NiceToggleButtonComponent } from './nice-toggle-button.component';
+import { ButtonToggleComponent } from './button-toggle.component';
 
-const meta: Meta<NiceToggleButtonComponent> = {
-  component: NiceToggleButtonComponent,
+const meta: Meta<ButtonToggleComponent> = {
+  component: ButtonToggleComponent,
   title: 'NiceToggleButtonComponent',
 };
 export default meta;
-type Story = StoryObj<NiceToggleButtonComponent>;
+type Story = StoryObj<ButtonToggleComponent>;
 
 const selectableOptions = ['Mein Mega', 'Controlling'];
 export const Primary: Story = {

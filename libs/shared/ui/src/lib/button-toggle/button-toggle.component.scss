@@ -1,0 +1,14 @@
+@use '../../../../../../node_modules/@angular/material/index' as mat;
+@import '../../../../../../apps/mega-frontend-app/src/styles/material';
+
+$primary: #{mat.get-theme-color($mega-dark-theme, primary, default)};
+$contrast: #{mat.get-theme-color($mega-dark-theme, primary, default-contrast)};
+
+:host {
+  --mat-standard-button-toggle-shape: 20px;
+  --mat-standard-button-toggle-selected-state-background-color: #{$primary};
+  --mat-standard-button-toggle-selected-state-text-color: #{$contrast};
+  --mat-standard-button-toggle-divider-color: #{$primary};
+  --mat-standard-button-toggle-text-color: #{$primary};
+  --mat-standard-button-toggle-background-color: transparent;
+}

@@ -10,14 +10,14 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'mega-app-nice-toggle-button',
+  selector: 'mega-shared-ui-button-toggle',
   standalone: true,
   imports: [CommonModule, MatButtonToggleModule, FormsModule],
-  templateUrl: './nice-toggle-button.component.html',
-  styleUrls: ['./nice-toggle-button.component.scss'],
+  templateUrl: './button-toggle.component.html',
+  styleUrls: ['./button-toggle.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NiceToggleButtonComponent {
+export class ButtonToggleComponent {
   @Input({ required: true }) selectableOptions: string[] = ['hello', 'world'];
   @Input({ required: true }) selected!: string;
   @Output() selectedChange = new EventEmitter<string>();
