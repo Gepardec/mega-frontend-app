@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin mega-shared-ui-button-toggle-theme($theme) {
+  $primary: #{mat.get-theme-color($theme, primary, default)};
+  $contrast: #{mat.get-theme-color($theme, primary, default-contrast)};
+
+  mega-shared-ui-button-toggle {
+    --mat-standard-button-toggle-selected-state-background-color: #{$primary};
+    --mat-standard-button-toggle-selected-state-text-color: #{$contrast};
+    --mat-standard-button-toggle-divider-color: #{$primary};
+    --mat-standard-button-toggle-text-color: #{$primary};
+    font-weight: bold;
+  }
+}

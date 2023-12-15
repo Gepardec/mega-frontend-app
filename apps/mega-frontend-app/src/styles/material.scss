@@ -4,78 +4,84 @@
 // For more information: https://material.angular.io/guide/theming
 // To explicitly import palette variables ($dark-primary-text etc.)
 @import '../../../../node_modules/@angular/material/core/theming/_palette';
+@import '../../../../libs/shared/ui/src/lib/button-toggle/_button-toggle-theme';
 
 // ----------------------------------------------------------
 // PALETTE
 // ----------------------------------------------------------
 /* For use in src/lib/core/theming/_palette.scss */
 $mega-colors-primary: (
-  50 : #fff9e0,
-  100 : #fff1b3,
-  200 : #ffe880,
-  300 : #ffdf4d,
-  400 : #ffd826,
-  500 : #ffd100,
-  600 : #ffcc00,
-  700 : #ffc600,
-  800 : #ffc000,
-  900 : #ffb500,
-  A100 : #ffffff,
-  A200 : #fffbf2,
-  A400 : #ffeabf,
-  A700 : #ffe2a6,
+  50: #fff9e0,
+  100: #fff1b3,
+  200: #ffe880,
+  300: #ffdf4d,
+  400: #ffd826,
+  500: #ffd100,
+  600: #ffcc00,
+  700: #ffc600,
+  800: #ffc000,
+  900: #ffb500,
+  A100: #ffffff,
+  A200: #fffbf2,
+  A400: #ffeabf,
+  A700: #ffe2a6,
   contrast: (
-    50 : #000000,
-    100 : #000000,
-    200 : #000000,
-    300 : #000000,
-    400 : #000000,
-    500 : #000000,
-    600 : #000000,
-    700 : #000000,
-    800 : #000000,
-    900 : #000000,
-    A100 : #000000,
-    A200 : #000000,
-    A400 : #000000,
-    A700 : #000000,
-  )
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
 );
 
 $mega-colors-accent: (
-  50 : #eceff1,
-  100 : #cfd8dc,
-  200 : #b0bec5,
-  300 : #90a4ae,
-  400 : #78919c,
-  500 : #607d8b,
-  600 : #587583,
-  700 : #4e6a78,
-  800 : #44606e,
-  900 : #334d5b,
-  A100 : #abe1ff,
-  A200 : #78ceff,
-  A400 : #45bcff,
-  A700 : #2bb3ff,
+  50: #eceff1,
+  100: #cfd8dc,
+  200: #b0bec5,
+  300: #90a4ae,
+  400: #78919c,
+  500: #607d8b,
+  600: #587583,
+  700: #4e6a78,
+  800: #44606e,
+  900: #334d5b,
+  A100: #abe1ff,
+  A200: #78ceff,
+  A400: #45bcff,
+  A700: #2bb3ff,
   contrast: (
-    50 : #000000,
-    100 : #000000,
-    200 : #000000,
-    300 : #000000,
-    400 : #000000,
-    500 : #ffffff,
-    600 : #ffffff,
-    700 : #ffffff,
-    800 : #ffffff,
-    900 : #ffffff,
-    A100 : #000000,
-    A200 : #000000,
-    A400 : #000000,
-    A700 : #000000,
-  )
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
 );
 
-$mega-colors-warn: map-merge(mat.$red-palette, (600: #e91000));
+$mega-colors-warn: map-merge(
+  mat.$red-palette,
+  (
+    600: #e91000,
+  )
+);
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -89,135 +95,139 @@ $mega-palette-warn: mat.define-palette($mega-colors-warn, 600);
 // ----------------------------------------------------------
 $mega-typography-config: mat.define-typography-config(
   $font-family: Barlow,
-  $headline-1: mat.define-typography-level(
-    /* v-text/h1 */
-    $font-family: Barlow,
-    $font-size: 88px,
+  $headline-1:
+    mat.define-typography-level(
+      /* v-text/h1 */ $font-family: Barlow,
+      $font-size: 88px,
       //$font-style: italic,
-    $font-weight: 400,
-    $line-height: 96px, /* 109.091% */
-    $letter-spacing: 1.5px,
-  ),
-  $headline-2: mat.define-typography-level(
-    /* v-text/h2 */
-    $font-family: Barlow,
-    $font-size: 57px,
+      $font-weight: 400,
+      $line-height: 96px,
+      /* 109.091% */ $letter-spacing: 1.5px
+    ),
+  $headline-2:
+    mat.define-typography-level(
+      /* v-text/h2 */ $font-family: Barlow,
+      $font-size: 57px,
       //$font-style: italic,
-    $font-weight: 400,
+      $font-weight: 400,
 
-    $line-height: 60px, /* 105.263% */
-    $letter-spacing: 0.5px,
-  ),
-  $headline-3: mat.define-typography-level(
-    /* v-text/h3 */
-    $font-family: Barlow,
-    $font-size: 48px,
+      $line-height: 60px,
+      /* 105.263% */ $letter-spacing: 0.5px
+    ),
+  $headline-3:
+    mat.define-typography-level(
+      /* v-text/h3 */ $font-family: Barlow,
+      $font-size: 48px,
       //$font-style: italic,
-    $font-weight: 400,
-    $line-height: 50px, /* 104.167% */
-  ),
-  $headline-4: mat.define-typography-level(
-    /* v-text/h4 */
-    $font-family: Barlow,
-    $font-size: 34px,
+      $font-weight: 400,
+      $line-height: 50px,
+      /* 104.167% */
+    ),
+  $headline-4:
+    mat.define-typography-level(
+      /* v-text/h4 */ $font-family: Barlow,
+      $font-size: 34px,
       //$font-style: italic,
-    $font-weight: 400,
-    $line-height: 40px, /* 117.647% */
-    $letter-spacing: 0.25px,
-  ),
-  $headline-5: mat.define-typography-level(
-    /* v-text/h5 */
-    $font-family: Barlow,
-    $font-size: 23px,
+      $font-weight: 400,
+      $line-height: 40px,
+      /* 117.647% */ $letter-spacing: 0.25px
+    ),
+  $headline-5:
+    mat.define-typography-level(
+      /* v-text/h5 */ $font-family: Barlow,
+      $font-size: 23px,
       //$font-style: italic,
-    $font-weight: 400,
-    $line-height: 32px, /* 139.13% */
-  ),
-  $headline-6: mat.define-typography-level(
-    /* v-text/h6 */
-    $font-family: Barlow,
-    $font-size: 20px,
+      $font-weight: 400,
+      $line-height: 32px,
+      /* 139.13% */
+    ),
+  $headline-6:
+    mat.define-typography-level(
+      /* v-text/h6 */ $font-family: Barlow,
+      $font-size: 20px,
       //$font-style: italic,
-    $font-weight: 400,
-    $line-height: 32px, /* 160% */
-    $letter-spacing: 0.25px,
-  ),
-  $subtitle-1: mat.define-typography-level(
-    /* v-text/subtitle-1 */
-    $font-family: Barlow,
-    $font-size: 15px,
+      $font-weight: 400,
+      $line-height: 32px,
+      /* 160% */ $letter-spacing: 0.25px
+    ),
+  $subtitle-1:
+    mat.define-typography-level(
+      /* v-text/subtitle-1 */ $font-family: Barlow,
+      $font-size: 15px,
       //$font-style: normal,
-    $font-weight: 400,
-    $line-height: 28px, /* 186.667% */
-    $letter-spacing: 0.15px,
-  ),
-  $subtitle-2: mat.define-typography-level(
-    /* v-text/subtitle-2 */
-    $font-family: Barlow,
-    $font-size: 14px,
+      $font-weight: 400,
+      $line-height: 28px,
+      /* 186.667% */ $letter-spacing: 0.15px
+    ),
+  $subtitle-2:
+    mat.define-typography-level(
+      /* v-text/subtitle-2 */ $font-family: Barlow,
+      $font-size: 14px,
       //$font-style: normal,
-    $font-weight: 400,
-    $line-height: 22px, /* 157.143% */
-    $letter-spacing: 0.1px,
-  ),
-  $body-1: mat.define-typography-level(
-    /* v-text/body-1 */
-    $font-family: Barlow,
-    $font-size: 16px,
+      $font-weight: 400,
+      $line-height: 22px,
+      /* 157.143% */ $letter-spacing: 0.1px
+    ),
+  $body-1:
+    mat.define-typography-level(
+      /* v-text/body-1 */ $font-family: Barlow,
+      $font-size: 16px,
       //$font-style: normal,
-    $font-weight: 400,
-    $line-height: 24px, /* 150% */
-    $letter-spacing: 0.5px,
-  ),
-  $body-2: mat.define-typography-level(
-    /* v-text/body-2 */
-    $font-family: Barlow,
-    $font-size: 14px,
+      $font-weight: 400,
+      $line-height: 24px,
+      /* 150% */ $letter-spacing: 0.5px
+    ),
+  $body-2:
+    mat.define-typography-level(
+      /* v-text/body-2 */ $font-family: Barlow,
+      $font-size: 14px,
       //$font-style: normal,
-    $font-weight: 400,
-    $line-height: 20px, /* 142.857% */
-    $letter-spacing: 0.25px,
-  ),
-  $button: mat.define-typography-level(
-    /* v-text/button */
-    $font-family: Barlow,
-    $font-size: 14px,
+      $font-weight: 400,
+      $line-height: 20px,
+      /* 142.857% */ $letter-spacing: 0.25px
+    ),
+  $button:
+    mat.define-typography-level(
+      /* v-text/button */ $font-family: Barlow,
+      $font-size: 14px,
       //$font-style: normal,
-    $font-weight: 600,
-    $line-height: 36px, /* 257.143% */
-    //$text-transform: capitalize,
-  ),
-  $caption: mat.define-typography-level(
-    /* v-text/caption */
-    $font-family: Barlow,
-    $font-size: 12px,
+      $font-weight: 600,
+      $line-height: 36px,
+      /* 257.143% */ //$text-transform: capitalize,
+    ),
+  $caption:
+    mat.define-typography-level(
+      /* v-text/caption */ $font-family: Barlow,
+      $font-size: 12px,
       //$font-style: normal,
-    $font-weight: 400,
-    $line-height: 20px, /* 166.667% */
-    $letter-spacing: 0.4px,
-  ),
-  $overline: mat.define-typography-level(
-    /* v-text/overline */
-    $font-family: Barlow,
-    $font-size: 12px,
+      $font-weight: 400,
+      $line-height: 20px,
+      /* 166.667% */ $letter-spacing: 0.4px
+    ),
+  $overline:
+    mat.define-typography-level(
+      /* v-text/overline */ $font-family: Barlow,
+      $font-size: 12px,
       //$font-style: normal,
-    $font-weight: 400,
-    $line-height: 32px, /* 266.667% */
-    $letter-spacing: 2px,
-    //$text-transform: uppercase,
-  )
+      $font-weight: 400,
+      $line-height: 32px,
+      /* 266.667% */ $letter-spacing: 2px,
+      //$text-transform: uppercase,
+    ),
 );
 
 // Create the theme object (a Sass map containing all of the palettes).
-$mega-dark-theme: mat.define-dark-theme((
-  color: (
-    primary: $mega-palette-primary,
-    accent: $mega-palette-accent,
-    warn: $mega-palette-warn
-  ),
-  typography: $mega-typography-config,
-  density: 0,
-));
+$mega-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $mega-palette-primary,
+      accent: $mega-palette-accent,
+      warn: $mega-palette-warn,
+    ),
+    typography: $mega-typography-config,
+    density: 0,
+  )
+);
 
 // ----------------------------------------------------------
 // VARIABLES
@@ -226,7 +236,7 @@ $mega-primary: mat.get-color-from-palette($mega-palette-primary, 500);
 $mega-primary-light: mat.get-color-from-palette($mega-palette-primary, 300);
 $mega-accent: mat.get-color-from-palette($mega-palette-accent, 600);
 
-
 // ----------------------------------------------------------
 // MIXINS
 // ----------------------------------------------------------
+@include mega-shared-ui-button-toggle-theme($mega-dark-theme);
