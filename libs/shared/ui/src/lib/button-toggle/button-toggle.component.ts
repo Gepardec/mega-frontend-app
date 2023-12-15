@@ -21,11 +21,12 @@ import { MatIconModule } from '@angular/material/icon';
 export class ButtonToggleComponent {
   @Input({ required: true }) selectableOptions!: ButtonToggleOption[];
   @Input({ required: true }) selected!: ButtonToggleOption['value'];
-  @Output() selectedChange = new EventEmitter<string>();
+  @Output() selectedChange = new EventEmitter<ButtonToggleOption['value']>();
 
   readonly ZERO_WIDTH_SPACE = '\u200B';
 }
 
+// either label or icon is required
 export type ButtonToggleOption =
   | {
       label: string;
