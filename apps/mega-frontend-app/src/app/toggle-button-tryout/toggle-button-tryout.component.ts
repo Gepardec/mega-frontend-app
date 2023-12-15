@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NiceToggleButtonComponent } from '../nice-toggle-button/nice-toggle-button.component';
+import { NiceToggleButtonComponent } from '../../../../../libs/shared/ui/src/lib/nice-toggle-button/nice-toggle-button.component';
 
 @Component({
   selector: 'mega-app-toggle-button-tryout',
