@@ -1,13 +1,15 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>
-      <i>{{ title }} </i>
+      <b
+        ><i>{{ title }} </i></b
+      >
     </mat-card-title>
   </mat-card-header>
 
   <mat-card-content>
     <div class="absolute-top-right">
-      <a href="{{ link }}">{{ linkDisplayName }}</a>
+      <a class="reference-link" href="{{ link }}">{{ linkDisplayName }}</a>
     </div>
 
     <ng-container *ngFor="let d of data">

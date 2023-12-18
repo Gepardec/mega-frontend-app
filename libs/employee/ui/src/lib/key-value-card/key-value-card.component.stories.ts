@@ -1,9 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/angular';
+import { componentWrapperDecorator, Meta, StoryObj } from '@storybook/angular';
 import { KeyValueCardComponent } from './key-value-card.component';
 
 const meta: Meta<KeyValueCardComponent> = {
   component: KeyValueCardComponent,
   title: 'KeyValueCardComponent',
+  decorators: [
+    componentWrapperDecorator(
+      (story) => `<div class='mat-app-background'>${story}</div>`
+    ),
+  ],
 };
 export default meta;
 type Story = StoryObj<KeyValueCardComponent>;
