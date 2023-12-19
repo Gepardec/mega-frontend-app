@@ -1,5 +1,5 @@
 import { componentWrapperDecorator, Meta, StoryObj } from '@storybook/angular';
-import { KeyValueCardComponent } from './key-value-card.component';
+import { KeyValueCardComponent } from '@mega/employee/ui';
 
 const meta: Meta<KeyValueCardComponent> = {
   component: KeyValueCardComponent,
