@@ -19,23 +19,19 @@ export const Abwesenheiten: Story = {
     data: [
       {
         key: 'Urlaub',
-        value: '2',
-        unit: 'Tage',
+        value: '2 Tage',
       },
       {
         key: 'Krankenstand',
-        value: '3',
-        unit: 'Tage',
+        value: '3 Tage',
       },
       {
         key: 'Home',
-        value: '3',
-        unit: 'Tage',
+        value: '3 Tage',
       },
       {
         key: 'Andere Abwesenheit',
-        value: '5',
-        unit: 'Stunden',
+        value: '5 Stunden',
       },
     ],
     link: '#',

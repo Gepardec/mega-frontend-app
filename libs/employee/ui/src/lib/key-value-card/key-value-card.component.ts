@@ -4,7 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { KeyValueModel } from './key-value-model';
 
 @Component({
-  selector: 'mega-app-key-value-card',
+  selector: 'mega-employee-ui-key-value-card',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, MatCardModule, NgOptimizedImage],
