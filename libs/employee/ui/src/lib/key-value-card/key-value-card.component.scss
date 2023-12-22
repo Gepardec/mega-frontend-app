@@ -1,5 +1,5 @@
 :host {
-  --mat-card-title-text-weight: 500;
+  --mat-card-title-text-weight: 400;
   --mat-card-title-text-size: 1.5rem;
 }
 
@@ -11,16 +11,26 @@
   flex-direction: row;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
 .justify-between {
   justify-content: space-between;
 }
 
-.absolute-top-right {
-  position: absolute;
-  right: 16px;
-  top: 16px;
+.align-center {
+  align-items: center;
 }
 
-.reference-link:visited {
-  color: #b7b4b4;
+.reference-link {
+  color: white;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.gap-5 {
+  gap: 5px;
 }

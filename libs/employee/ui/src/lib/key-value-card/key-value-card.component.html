@@ -1,21 +1,17 @@
 <mat-card>
-  <mat-card-header>
+  <mat-card-header class="flex flex-row justify-between align-center">
     <mat-card-title>
       <i>{{ title }}</i>
     </mat-card-title>
+    <a [href]="link" class="reference-link">{{ linkDisplayName }}</a>
   </mat-card-header>
 
-  <mat-card-content>
-    <div class="absolute-top-right">
-      <a class="reference-link" href="{{ link }}">{{ linkDisplayName }}</a>
-    </div>
-
-    <ng-container *ngFor="let d of data">
+  <mat-card-content class="flex flex-column gap-5 mt-15">
+    @for (d of data; track d.key) {
       <div class="flex flex-row justify-between">
         <div>{{ d.key }}:</div>
-        <div class="flex-grow"></div>
         <div>{{ d.value }}</div>
       </div>
-    </ng-container>
+    }
   </mat-card-content>
 </mat-card>
