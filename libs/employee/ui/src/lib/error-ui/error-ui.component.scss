@@ -1,0 +1,36 @@
+.error-card-header {
+  margin-bottom: 10px;
+}
+
+.error-card-title {
+  color: white;
+  font-size: xx-large;
+}
+
+.error-card-entry {
+  background: #ff5252;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: white;
+}
+
+.error-card-entry-content {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.error-card-entry-content-icon {
+  margin-right: 10px;
+}
+
+.error-card-entry-content-chip-set {
+  margin-left: 5px;
+}
+
+.error-card-entry-content-chip {
+  background-color: #ff5252 !important; // TODO geht das auch ohne !important?
+  border: 1px solid white;
+  margin-left: 5px
+}
