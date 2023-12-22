@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { EmployeeUiComponent } from './employee-ui.component';
+import { KeyValueCardComponent } from './key-value-card.component';
 
-describe('EmployeeUiComponent', () => {
-  let component: EmployeeUiComponent;
-  let fixture: ComponentFixture<EmployeeUiComponent>;
+describe('KeyValueCardComponent', () => {
+  let component: KeyValueCardComponent;
+  let fixture: ComponentFixture<KeyValueCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EmployeeUiComponent],
+      imports: [KeyValueCardComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(EmployeeUiComponent);
+    fixture = TestBed.createComponent(KeyValueCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

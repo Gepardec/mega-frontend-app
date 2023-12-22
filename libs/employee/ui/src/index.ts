@@ -1,1 +1,1 @@
-export * from './lib/employee-ui/employee-ui.component';
+export * from './lib/key-value-card/key-value-card.component';
