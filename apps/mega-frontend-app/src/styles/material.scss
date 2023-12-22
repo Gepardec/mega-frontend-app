@@ -3,7 +3,8 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 // To explicitly import palette variables ($dark-primary-text etc.)
-@import '../../../../node_modules/@angular/material/core/theming/_palette';
+@import '@angular/material/core/theming/_palette';
+@import 'mixins/button-toggle-theme';
 
 // ----------------------------------------------------------
 // PALETTE
@@ -238,3 +239,4 @@ $mega-accent: mat.get-color-from-palette($mega-palette-accent, 600);
 // ----------------------------------------------------------
 // MIXINS
 // ----------------------------------------------------------
+@include mega-button-toggle-theme($mega-dark-theme);
