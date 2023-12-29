@@ -1,0 +1,28 @@
+@use '@angular/material/core/tokens/token-utils';
+@use '../tokens/avatar' as tokens-avatar;
+
+@include token-utils.use-tokens(
+  tokens-avatar.$prefix,
+  tokens-avatar.get-token-slots()
+) {
+  .avatar {
+    @include token-utils.create-token-slot(width, size);
+    @include token-utils.create-token-slot(height, size);
+    @include token-utils.create-token-slot(border-color, border-color);
+    @include token-utils.create-token-slot(background, background-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 9999px;
+    border-width: 2px;
+    border-style: solid;
+  }
+
+  .avatar-text {
+    @include token-utils.create-token-slot(color, text-color);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+  }
+}
