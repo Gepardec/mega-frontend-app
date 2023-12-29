@@ -1,0 +1,14 @@
+@use '../../../../node_modules/@angular/material/index' as mat;
+
+:host {
+  --mat-toolbar-standard-height: 80px;
+}
+
+.logo {
+  height: 64px;
+}
+
+.month-year-size {
+  min-width: 180px !important;
+  max-width: 840px;
+}

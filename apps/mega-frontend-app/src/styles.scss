@@ -12,6 +12,7 @@
 @import '@fontsource/barlow/700.css';
 
 @import 'material-icons/iconfont/filled';
+@import 'styles/utilities';
 
 // ----------------------------------------------------------
 // ANGULAR MATERIAL THEME CREATION
@@ -26,3 +27,12 @@
 // that you are using.
 @include mat.all-component-themes($mega-dark-theme);
 @include mat.private-form-field-density(-1);
+
+// density class must be defined in root level to bypass view encapsulation
+.density-n4 {
+  @include mat.all-component-densities(-4);
+}
+
+.density-n2 {
+  @include mat.all-component-densities(-2);
+}

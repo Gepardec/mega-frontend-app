@@ -1,0 +1,42 @@
+<mat-toolbar>
+  <mat-toolbar-row class="flex-wrap items-center gap-x-8">
+    <!-- Logo -->
+    <img class="logo" src="/assets/logo.png" alt="app logo" />
+
+    <!-- Menu -->
+    <mat-button-toggle-group
+      value="employee"
+      class="flex-shrink-0 text-sm density-n2"
+    >
+      <mat-button-toggle value="employee">Mein Mega</mat-button-toggle>
+      <mat-button-toggle value="controlling">Controlling</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <!-- Month & Year Select -->
+    <mat-form-field
+      appearance="outline"
+      subscriptSizing="dynamic"
+      class="density-n4 month-year-size flex-1"
+    >
+      <input matInput [matDatepicker]="yearMonthPicker" />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="yearMonthPicker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #yearMonthPicker></mat-datepicker>
+    </mat-form-field>
+
+    <!-- Buttons & Avatar -->
+    <section class="ml-auto flex flex-shrink-0 items-center">
+      <button mat-icon-button color="primary">
+        <mat-icon>apps</mat-icon>
+      </button>
+      <button mat-icon-button color="primary">
+        <mat-icon>message</mat-icon>
+      </button>
+
+      <!-- Avatar -->
+      <mega-shared-ui-avatar class="ml-1.5" />
+    </section>
+  </mat-toolbar-row>
+</mat-toolbar>
