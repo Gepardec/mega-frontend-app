@@ -431,7 +431,7 @@ import { CommonModule } from '@angular/common';
         <!--  WELCOME  -->
         <div id="welcome">
           <h1>
-            <span> Hello there, </span>
+            <span>Hello there,</span>
             Welcome mega-frontend-app 👋
           </h1>
         </div>
@@ -454,7 +454,7 @@ import { CommonModule } from '@angular/common';
               </svg>
               <span>You&apos;re up and running</span>
             </h2>
-            <a href="#commands"> What&apos;s next? </a>
+            <a href="#commands">What&apos;s next?</a>
           </div>
           <div class="logo-container">
             <svg
@@ -494,7 +494,7 @@ import { CommonModule } from '@angular/common';
               </svg>
               <span>
                 Documentation
-                <span> Everything is in there </span>
+                <span>Everything is in there</span>
               </span>
               <svg
                 fill="none"
@@ -531,7 +531,7 @@ import { CommonModule } from '@angular/common';
               </svg>
               <span>
                 Blog
-                <span> Changelog, features & events </span>
+                <span>Changelog, features & events</span>
               </span>
               <svg
                 fill="none"
@@ -566,7 +566,7 @@ import { CommonModule } from '@angular/common';
               </svg>
               <span>
                 YouTube channel
-                <span> Nx Show, talks & tutorials </span>
+                <span>Nx Show, talks & tutorials</span>
               </span>
               <svg
                 fill="none"
@@ -603,7 +603,7 @@ import { CommonModule } from '@angular/common';
               </svg>
               <span>
                 Interactive tutorials
-                <span> Create an app, step-by-step </span>
+                <span>Create an app, step-by-step</span>
               </span>
               <svg
                 fill="none"
@@ -644,7 +644,7 @@ import { CommonModule } from '@angular/common';
               </svg>
               <span>
                 Video courses
-                <span> Nx custom courses </span>
+                <span>Nx custom courses</span>
               </span>
               <svg
                 fill="none"
@@ -726,10 +726,9 @@ import { CommonModule } from '@angular/common';
               </svg>
               <span>
                 Install Nx Console for JetBrains
-                <span
-                  >Available for WebStorm, Intellij IDEA Ultimate and
-                  more!</span
-                >
+                <span>
+                  Available for WebStorm, Intellij IDEA Ultimate and more!
+                </span>
               </span>
             </a>
             <div id="nx-cloud" class="rounded shadow">
@@ -753,7 +752,7 @@ import { CommonModule } from '@angular/common';
                 </svg>
                 <h2>
                   NxCloud
-                  <span> Enable faster CI & better DX </span>
+                  <span>Enable faster CI & better DX</span>
                 </h2>
               </div>
               <p>
@@ -788,7 +787,7 @@ import { CommonModule } from '@angular/common';
               </svg>
               <span>
                 Nx is open source
-                <span> Love Nx? Give us a star! </span>
+                <span>Love Nx? Give us a star!</span>
               </span>
             </a>
           </div>

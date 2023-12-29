@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { MatInputModule } from '@angular/material/input';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
-import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { HeaderComponent } from '../../../../../../apps/mega-frontend-app/src/header/header.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { AvatarComponent } from '@mega/shared/ui';
 
 @Component({
-  selector: 'mega-employee-feature-employee-feature',
+  selector: 'mega-app-header',
   standalone: true,
   imports: [
     CommonModule,
@@ -27,9 +27,9 @@ import { HeaderComponent } from '../../../../../../apps/mega-frontend-app/src/he
     MatCardModule,
     MatSelectModule,
     MatCheckboxModule,
-    HeaderComponent,
+    AvatarComponent,
   ],
-  templateUrl: './employee-feature.component.html',
-  styleUrls: ['./employee-feature.component.scss'],
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
 })
-export class EmployeeFeatureComponent {}
+export class HeaderComponent {}
