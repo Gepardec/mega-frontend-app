@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,5 +7,8 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './avatar.component.html',
   styleUrls: ['./avatar.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AvatarComponent {}
+export class AvatarComponent {
+  @Input({ required: true }) initials: string | null = '';
+}

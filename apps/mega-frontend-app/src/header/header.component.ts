@@ -11,6 +11,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AvatarComponent, DatepickerMonthYearComponent } from '@mega/shared/ui';
+import { UserService } from '../auth/user/user.service';
+import { map } from 'rxjs';
+import { User } from '../auth/model/User';
 
 @Component({
   selector: 'mega-app-header',
@@ -36,4 +39,14 @@ import { AvatarComponent, DatepickerMonthYearComponent } from '@mega/shared/ui';
 export class HeaderComponent {
   // TODO input sobald möglich
   dummyDate: Date = new Date();
+  userInitials$ = this.userService.user$.pipe(map(this.extractInitials));
+  constructor(private userService: UserService) {}
+
+  private extractInitials(user?: User) {
+    let initals = '';
+    initals += user?.firstname?.trim()[0] || '';
+    initals += user?.lastname?.trim()[0] || '';
+
+    return initals;
+  }
 }

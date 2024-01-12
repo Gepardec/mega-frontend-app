@@ -21,6 +21,7 @@
     "@angular/router": "~17.0.0",
     "@fontsource/barlow": "^5.0.8",
     "@nx/angular": "17.1.2",
+    "angular-oauth2-oidc": "^17.0.1",
     "material-icons": "^1.13.12",
     "nx": "17.1.2",
     "react": "^18.2.0",
