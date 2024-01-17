@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ConfigService } from '../config/config.service';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, map } from 'rxjs';
 import { User } from '../model/User';
 
 @Injectable({
@@ -11,6 +11,13 @@ import { User } from '../model/User';
 })
 export class UserService {
   user$ = new BehaviorSubject<User | undefined>(undefined);
+
+  loggedIn$ = combineLatest([this.oAuthService.events, this.user$]).pipe(
+    map(([events, user]) => {
+      // returns false if user is removed
+      return user && this.oAuthService.hasValidAccessToken();
+    })
+  );
 
   constructor(
     private router: Router,

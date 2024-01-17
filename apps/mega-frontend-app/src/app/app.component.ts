@@ -36,6 +36,7 @@ export class AppComponent implements OnInit {
     await this.oAuthService.loadDiscoveryDocumentAndTryLogin();
     this.oAuthService.setupAutomaticSilentRefresh();
 
+    // todo logik so richtig? gehört das nicht invertiert?
     if (this.userService.loggedInWithGoogle()) {
       this.userService.loginUser();
     }

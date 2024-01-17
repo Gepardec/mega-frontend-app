@@ -4,6 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { NgIf } from '@angular/common';
 import { UserService } from '../auth/user/user.service';
+import { map } from 'rxjs';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'mega-app-login',
@@ -13,6 +15,10 @@ import { UserService } from '../auth/user/user.service';
   imports: [NgIf, MatCardModule, MatButtonModule],
 })
 export class LoginComponent {
+  loggedOut = toSignal(
+    this.userService.loggedIn$.pipe(map((loggedIn) => !loggedIn))
+  );
+
   constructor(
     private oAuthService: OAuthService,
     private userService: UserService
@@ -20,9 +26,5 @@ export class LoginComponent {
 
   login() {
     this.oAuthService.initLoginFlow();
-  }
-
-  loggedIn() {
-    return this.userService.loggedInWithGoogle();
   }
 }
