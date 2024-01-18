@@ -58,18 +58,18 @@ export const MY_FORMATS: MatDateFormats = {
 export class DatepickerMonthYearComponent {
   @Input({ required: true }) date!: Date;
   @Output() dateChanged: EventEmitter<Date> = new EventEmitter<Date>();
-
   dateFormControl = new FormControl(this.date);
+
+  // The last month you should be able to select is the current month
   maxDate: Date = new Date();
+
+  // This is a custom UI-component for the datepicker header
   protected readonly DatePickerCustomHeaderComponent =
     DatePickerCustomHeaderComponent;
 
-  monthChangedHandler(
-    normalizedMonthAndYear: Date,
-    datepicker: MatDatepicker<Date>
-  ) {
-    this.dateFormControl.setValue(normalizedMonthAndYear);
-    this.dateChanged.emit(normalizedMonthAndYear);
+  monthChangedHandler(newDate: Date, datepicker: MatDatepicker<Date>) {
+    this.dateFormControl.setValue(newDate);
+    this.dateChanged.emit(newDate);
     datepicker.close();
   }
 }
