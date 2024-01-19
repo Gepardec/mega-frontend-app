@@ -1,1 +1,1 @@
-export * from './lib/shared-ui/shared-ui.component';
+export * from './lib/datepicker-month-year/datepicker-month-year.component';
