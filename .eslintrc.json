@@ -1,11 +1,19 @@
 {
+  "extends": [
+    "prettier"
+  ],
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nx"],
+  "plugins": ["@nx", "prettier"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
+        "prettier/prettier": ["error",
+          {
+            "endOfLine": "auto"
+          }
+        ],
         "@nx/enforce-module-boundaries": [
           "error",
           {
