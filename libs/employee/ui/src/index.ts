@@ -1,2 +1,2 @@
-export * from './lib/employee-ui/employee-ui.component';
+export * from './lib/key-value-card/key-value-card.component';
 export * from './lib/error-ui/error-ui.component';
