@@ -15,7 +15,7 @@ import {
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { deAT } from 'date-fns/locale';
-import { DatePickerCustomHeaderComponent } from '../date-picker-custom-header/date-picker-custom-header.component';
+import { DatePickerCustomHeaderComponent } from './date-picker-custom-header/date-picker-custom-header.component';
 import {
   DateFnsAdapter,
   MatDateFnsModule,
@@ -58,7 +58,8 @@ export const MY_FORMATS: MatDateFormats = {
 export class DatepickerMonthYearComponent {
   @Input({ required: true }) date!: Date;
   @Output() dateChanged: EventEmitter<Date> = new EventEmitter<Date>();
-  dateFormControl = new FormControl(this.date);
+
+  dateFormControl: FormControl<Date | null> = new FormControl(this.date);
 
   // The last month you should be able to select is the current month
   maxDate: Date = new Date();
