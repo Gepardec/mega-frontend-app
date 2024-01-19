@@ -44,8 +44,8 @@ export const MY_FORMATS: MatDateFormats = {
       useClass: DateFnsAdapter,
       deps: [MAT_DATE_LOCALE, MAT_DATE_FORMATS],
     },
-    { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
     { provide: MAT_DATE_LOCALE, useValue: deAT },
+    { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
   ],
   imports: [
     MatFormFieldModule,
