@@ -10,7 +10,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { HeaderComponent } from '../../../../../../apps/mega-frontend-app/src/header/header.component';
+import { Entry, ErrorUiComponent } from '@mega/employee/ui';
 
 @Component({
   selector: 'mega-employee-feature-employee-feature',
@@ -27,9 +27,16 @@ import { HeaderComponent } from '../../../../../../apps/mega-frontend-app/src/he
     MatCardModule,
     MatSelectModule,
     MatCheckboxModule,
-    HeaderComponent,
+    ErrorUiComponent,
   ],
   templateUrl: './employee-feature.component.html',
   styleUrls: ['./employee-feature.component.scss'],
 })
-export class EmployeeFeatureComponent {}
+export class EmployeeFeatureComponent {
+  dummyEntries: Entry[] = [
+    {
+      msg: 'Error 1',
+      dates: [new Date(), new Date()],
+    },
+  ];
+}

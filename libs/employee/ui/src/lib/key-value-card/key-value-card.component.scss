@@ -1,36 +1,17 @@
+// TODO alle cards einheitlich, statt definiton pro card (define globally / in emplyoee feature)
 :host {
   --mat-card-title-text-weight: 400;
   --mat-card-title-text-size: 1.5rem;
-}
-
-.flex {
-  display: flex;
-}
-
-.flex-row {
-  flex-direction: row;
-}
-
-.flex-column {
-  flex-direction: column;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.align-center {
-  align-items: center;
 }
 
 .reference-link {
   color: white;
 }
 
-.mt-15 {
+.mt-15px {
   margin-top: 15px;
 }
 
-.gap-5 {
+.gap-5px {
   gap: 5px;
 }
