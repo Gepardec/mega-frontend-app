@@ -7,7 +7,7 @@ import { Entry } from './entry';
 import { TimeViolationAlertComponent } from '../time-violation-alert/time-violation-alert.component';
 
 @Component({
-  selector: 'mega-employee-ui-time-violations-card',
+  selector: 'mega-employee-ui-time-violations',
   standalone: true,
   imports: [
     CommonModule,
@@ -16,10 +16,10 @@ import { TimeViolationAlertComponent } from '../time-violation-alert/time-violat
     MatChipsModule,
     TimeViolationAlertComponent,
   ],
-  templateUrl: './time-violations-card.component.html',
-  styleUrls: ['./time-violations-card.component.scss'],
+  templateUrl: './time-violations.component.html',
+  styleUrls: ['./time-violations.component.scss'],
 })
-export class TimeViolationsCardComponent {
+export class TimeViolationsComponent {
   @Input({ required: true })
   title!: string;
 

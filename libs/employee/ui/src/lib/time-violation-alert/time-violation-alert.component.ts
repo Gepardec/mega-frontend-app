@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
-import { Entry } from '../time-violations-card/entry';
+import { Entry } from '../time-violations/entry';
 
 @Component({
   selector: 'mega-employee-ui-time-violation-alert',
