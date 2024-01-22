@@ -32,7 +32,3 @@
 .density-n4 {
   @include mat.all-component-densities(-4);
 }
-
-.density-n2 {
-  @include mat.all-component-densities(-2);
-}

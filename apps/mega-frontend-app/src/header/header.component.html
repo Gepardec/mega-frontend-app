@@ -6,25 +6,17 @@
     <!-- Menu -->
     <mat-button-toggle-group
       value="employee"
-      class="flex-shrink-0 text-sm density-n2"
+      class="flex-shrink-0 toggle-menu text-sm"
     >
       <mat-button-toggle value="employee">Mein Mega</mat-button-toggle>
       <mat-button-toggle value="controlling">Controlling</mat-button-toggle>
     </mat-button-toggle-group>
 
     <!-- Month & Year Select -->
-    <mat-form-field
-      appearance="outline"
-      subscriptSizing="dynamic"
-      class="density-n4 month-year-size flex-1"
-    >
-      <input matInput [matDatepicker]="yearMonthPicker" />
-      <mat-datepicker-toggle
-        matIconSuffix
-        [for]="yearMonthPicker"
-      ></mat-datepicker-toggle>
-      <mat-datepicker #yearMonthPicker></mat-datepicker>
-    </mat-form-field>
+    <mega-shared-ui-datepicker-month-year
+      class="month-year-size flex-1 density-n4"
+      [date]="dummyDate"
+    ></mega-shared-ui-datepicker-month-year>
 
     <!-- Buttons & Avatar -->
     <section class="ml-auto flex flex-shrink-0 items-center">

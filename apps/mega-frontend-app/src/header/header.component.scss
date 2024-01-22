@@ -1,4 +1,4 @@
-@use '../../../../node_modules/@angular/material/index' as mat;
+@use '@angular/material' as mat;
 
 :host {
   --mat-toolbar-standard-height: 80px;
@@ -9,6 +9,22 @@
 }
 
 .month-year-size {
-  min-width: 180px !important;
-  max-width: 840px;
+  min-width: 180px;
+  max-width: 40%;
+
+  @include mat.all-component-densities(-4);
+}
+
+.toggle-menu {
+  @include mat.button-toggle-density(-2);
+}
+
+@media only screen and (max-width: 900px) {
+  .logo {
+    display: none;
+  }
+
+  .toggle-menu {
+    @include mat.button-toggle-density(-3);
+  }
 }

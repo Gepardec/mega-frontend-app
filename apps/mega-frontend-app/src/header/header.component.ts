@@ -10,7 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { AvatarComponent } from '@mega/shared/ui';
+import { AvatarComponent, DatepickerMonthYearComponent } from '@mega/shared/ui';
 
 @Component({
   selector: 'mega-app-header',
@@ -28,8 +28,12 @@ import { AvatarComponent } from '@mega/shared/ui';
     MatSelectModule,
     MatCheckboxModule,
     AvatarComponent,
+    DatepickerMonthYearComponent,
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  // TODO input sobald möglich
+  dummyDate: Date = new Date();
+}
