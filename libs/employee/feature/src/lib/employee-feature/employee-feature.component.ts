@@ -10,7 +10,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { Entry, ErrorUiComponent } from '@mega/employee/ui';
+import { Entry, ErrorCardComponent } from '@mega/employee/ui';
 
 @Component({
   selector: 'mega-employee-feature-employee-feature',
@@ -27,7 +27,7 @@ import { Entry, ErrorUiComponent } from '@mega/employee/ui';
     MatCardModule,
     MatSelectModule,
     MatCheckboxModule,
-    ErrorUiComponent,
+    ErrorCardComponent,
   ],
   templateUrl: './employee-feature.component.html',
   styleUrls: ['./employee-feature.component.scss'],

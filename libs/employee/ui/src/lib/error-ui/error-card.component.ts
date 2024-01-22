@@ -6,18 +6,16 @@ import { MatChipsModule } from '@angular/material/chips';
 import { Entry } from './entry';
 
 @Component({
-  selector: 'mega-employee-ui-error-ui',
+  selector: 'mega-employee-ui-error-card',
   standalone: true,
   imports: [CommonModule, MatCardModule, MatIconModule, MatChipsModule],
-  templateUrl: './error-ui.component.html',
-  styleUrls: ['./error-ui.component.scss'],
+  templateUrl: './error-card.component.html',
+  styleUrls: ['./error-card.component.scss'],
 })
-export class ErrorUiComponent {
-
+export class ErrorCardComponent {
   @Input({ required: true })
   title!: string;
 
-  @Input({required: true})
-  entries!: Entry[]
-
+  @Input({ required: true })
+  entries!: Entry[];
 }
