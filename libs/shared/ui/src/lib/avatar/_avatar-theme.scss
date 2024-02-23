@@ -1,28 +1,20 @@
-@use '@angular/material/core/style/sass-utils';
-@use '@angular/material/core/tokens/token-utils';
-@use '../tokens/avatar' as tokens-avatar;
+@use 'sass:map';
 @use '@angular/material' as mat;
 
-@mixin base($theme) {
-  @include sass-utils.current-selector-or-root() {
-    @include token-utils.create-token-values(
-      tokens-avatar.$prefix,
-      tokens-avatar.get-unthemable-tokens()
-    );
-  }
-}
-@mixin color($theme) {
-  @include sass-utils.current-selector-or-root() {
-    @include token-utils.create-token-values(
-      tokens-avatar.$prefix,
-      tokens-avatar.get-color-tokens($theme)
-    );
-  }
-}
+/// @param {Map} $theme Material theme object.
+/// @param {Map} $options Optional configuration object.
+@mixin theme(
+  $theme,
+  $options: (size: 36px, background: transparent, text-color: white)
+) {
+  html {
+    --shared-ui-avatar-background: #{map.get($options, background)};
+    --shared-ui-avatar-size: #{map.get($options, size)};
+    --shared-ui-text-color: #{map.get($options, text-color)};
 
-@mixin avatar-theme($theme) {
-  @include base($theme);
-  @if mat.theme-has($theme, color) {
-    @include color($theme);
+    @if mat.theme-has($theme, color) {
+      $primary: mat.get-theme-color($theme, primary, text);
+      --shared-ui-avatar-border-color: #{$primary};
+    }
   }
 }

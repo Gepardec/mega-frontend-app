@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
 
-@mixin mega-button-toggle-theme($theme) {
+@mixin theme($theme) {
   $primary: #{mat.get-theme-color($theme, primary, default)};
   $contrast: #{mat.get-theme-color($theme, primary, default-contrast)};
 

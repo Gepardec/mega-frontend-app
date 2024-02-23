@@ -1,6 +1,6 @@
 @use '@angular/material' as mat;
 
-@import 'styles/material';
+@use 'styles/mega-theme' as mega;
 @import 'styles/global';
 
 // ----------------------------------------------------------
@@ -25,7 +25,7 @@
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($mega-dark-theme);
+@include mat.all-component-themes(mega.$mega-dark-theme);
 @include mat.private-form-field-density(-1);
 
 // density class must be defined in root level to bypass view encapsulation

@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+/// @param {Map} $theme Material theme object.
+@mixin theme($theme) {
+  @if mat.theme-has($theme, color) {
+    mega-employee-ui-time-violation-alert {
+      $bg: mat.get-theme-color($theme, warn, default);
+      $text-color: mat.get-theme-color($theme, warn, default-contrast);
+
+      --mega-employee-ui-time-violation-alert-background: #{$bg};
+      --mega-employee-ui-time-violation-alert-text-color: #{$text-color};
+    }
+  }
+}
