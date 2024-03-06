@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TimeViolationsComponent } from '@mega/employee/ui';
+import { TimeViolationsComponent } from './time-violations.component';
 
 describe('ErrorUiComponent', () => {
   let component: TimeViolationsComponent;

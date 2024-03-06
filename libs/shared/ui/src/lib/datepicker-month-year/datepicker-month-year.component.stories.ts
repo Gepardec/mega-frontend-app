@@ -1,4 +1,4 @@
-import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
+import { Meta, StoryObj } from '@storybook/angular';
 import { DatepickerMonthYearComponent } from './datepicker-month-year.component';
 
 const meta: Meta<DatepickerMonthYearComponent> = {

@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-import { KeyValueModel } from './key-value-model';
 
 @Component({
   selector: 'mega-employee-ui-key-value-card',
