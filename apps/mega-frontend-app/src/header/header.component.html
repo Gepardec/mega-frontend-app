@@ -21,16 +21,14 @@
     <!-- Buttons & Avatar -->
     <section class="ml-auto flex flex-shrink-0 items-center">
       <button mat-icon-button color="primary">
-        <mat-icon>apps</mat-icon>
-      </button>
-      <button mat-icon-button color="primary">
-        <mat-icon>message</mat-icon>
+        <mat-icon>logout</mat-icon>
       </button>
 
       <!-- Avatar -->
       <mega-shared-ui-avatar
         [initials]="userInitials$ | async"
         class="ml-1.5"
+        (click)="userService.logout()"
       />
     </section>
   </mat-toolbar-row>

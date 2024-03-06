@@ -38,7 +38,6 @@ export class ConfigService {
   }
 
   getBackendUrl(): string {
-    // TODO pfusch ???
     return window.location.origin.replace(
       environment.frontendOriginSegment,
       environment.backendOriginSegment

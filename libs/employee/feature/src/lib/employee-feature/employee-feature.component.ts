@@ -10,7 +10,11 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { Entry, TimeViolationsComponent } from '@mega/employee/ui';
+import {
+  Entry,
+  KeyValueCardComponent,
+  TimeViolationsComponent,
+} from '@mega/employee/ui';
 
 @Component({
   selector: 'mega-employee-feature-employee-feature',
@@ -28,11 +32,21 @@ import { Entry, TimeViolationsComponent } from '@mega/employee/ui';
     MatSelectModule,
     MatCheckboxModule,
     TimeViolationsComponent,
+    KeyValueCardComponent,
   ],
   templateUrl: './employee-feature.component.html',
   styleUrls: ['./employee-feature.component.scss'],
 })
 export class EmployeeFeatureComponent {
+  dummyData: Record<string, string>[] = [
+    {
+      key: 'value',
+    },
+    {
+      hello: 'world',
+    },
+  ];
+
   dummyEntries: Entry[] = [
     {
       msg: 'Arbeitszeit wurde überschritten',

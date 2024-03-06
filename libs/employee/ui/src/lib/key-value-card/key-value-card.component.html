@@ -7,10 +7,12 @@
   </mat-card-header>
 
   <mat-card-content class="flex flex-col gap-5px mt-15px">
-    @for (d of data; track d.key) {
+    @for (d of data; track d) {
     <div class="flex flex-row justify-between">
-      <div>{{ d.key }}:</div>
-      <div>{{ d.value }}</div>
+      @for (item of d | keyvalue; track item.key) {
+      <div>{{ item.key }}</div>
+      <div>{{ item.value }}</div>
+      }
     </div>
     }
   </mat-card-content>

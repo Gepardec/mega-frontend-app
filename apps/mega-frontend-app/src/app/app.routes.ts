@@ -1,14 +1,14 @@
 import { Route } from '@angular/router';
 import { EmployeeFeatureComponent } from '@mega/employee/feature';
-import { LoginComponent } from '../login/login.component';
 
 export const appRoutes: Route[] = [
   {
-    path: '',
+    path: 'mein-mega',
     component: EmployeeFeatureComponent,
   },
   {
-    path: 'login',
-    component: LoginComponent,
+    path: '',
+    redirectTo: 'mein-mega',
+    pathMatch: 'full',
   },
 ];

@@ -13,7 +13,7 @@ import { KeyValueModel } from './key-value-model';
 })
 export class KeyValueCardComponent {
   @Input({ required: true })
-  data!: KeyValueModel[];
+  data!: Record<string, string>[];
 
   @Input({ required: true })
   title!: string;

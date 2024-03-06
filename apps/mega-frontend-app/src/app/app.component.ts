@@ -6,10 +6,11 @@ import { OAuthService } from 'angular-oauth2-oidc';
 import { firstValueFrom } from 'rxjs';
 import { UserService } from '../auth/user/user.service';
 import { ConfigService } from '../auth/config/config.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule, HeaderComponent],
+  imports: [NxWelcomeComponent, RouterModule, HeaderComponent, AsyncPipe],
   selector: 'mega-app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -20,7 +21,7 @@ export class AppComponent implements OnInit {
   constructor(
     private oAuthService: OAuthService,
     private configService: ConfigService,
-    private userService: UserService
+    public userService: UserService
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -36,9 +37,10 @@ export class AppComponent implements OnInit {
     await this.oAuthService.loadDiscoveryDocumentAndTryLogin();
     this.oAuthService.setupAutomaticSilentRefresh();
 
-    // todo logik so richtig? gehört das nicht invertiert?
     if (this.userService.loggedInWithGoogle()) {
-      this.userService.loginUser();
+      this.userService.retrieveUser();
+    } else {
+      this.oAuthService.initLoginFlow();
     }
   }
 }

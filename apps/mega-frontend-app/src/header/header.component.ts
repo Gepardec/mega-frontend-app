@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -14,6 +14,7 @@ import { AvatarComponent, DatepickerMonthYearComponent } from '@mega/shared/ui';
 import { UserService } from '../auth/user/user.service';
 import { map } from 'rxjs';
 import { User } from '../auth/model/User';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'mega-app-header',
@@ -32,6 +33,7 @@ import { User } from '../auth/model/User';
     MatCheckboxModule,
     AvatarComponent,
     DatepickerMonthYearComponent,
+    MatTooltipModule,
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
@@ -39,8 +41,8 @@ import { User } from '../auth/model/User';
 export class HeaderComponent {
   // TODO input sobald möglich
   dummyDate: Date = new Date();
+  userService = inject(UserService);
   userInitials$ = this.userService.user$.pipe(map(this.extractInitials));
-  constructor(private userService: UserService) {}
 
   private extractInitials(user?: User) {
     let initals = '';
