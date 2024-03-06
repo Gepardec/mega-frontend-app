@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
 import { HeaderComponent } from '../header/header.component';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { firstValueFrom } from 'rxjs';
@@ -11,7 +10,7 @@ import { getBrowserLang, TranslocoService } from '@ngneat/transloco';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule, HeaderComponent, AsyncPipe],
+  imports: [RouterModule, HeaderComponent, AsyncPipe],
   selector: 'mega-app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
