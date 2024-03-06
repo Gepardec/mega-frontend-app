@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@gepardec/ngx-gepardec-mat": ["libs/ngx-gepardec-mat/src/index.ts"],
       "@mega/controlling/domain": ["libs/controlling/domain/src/index.ts"],
       "@mega/controlling/feature": ["libs/controlling/feature/src/index.ts"],
       "@mega/controlling/ui": ["libs/controlling/ui/src/index.ts"],
