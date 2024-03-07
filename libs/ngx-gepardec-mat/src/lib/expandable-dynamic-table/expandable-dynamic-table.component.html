@@ -1,0 +1,99 @@
+<mat-table [dataSource]="dataSource"
+           [trackBy]="byIndexTracker"
+           matSort
+           multiTemplateDataRows>
+  <ng-container *ngFor="let columnSpec of columnSpecs" [matColumnDef]="columnSpec.displayedColumn">
+
+    <!--HEADER-->
+    <ng-container *ngIf="!isColumnSorted(columnSpec.displayedColumn)">
+      <mat-header-cell *matHeaderCellDef>{{columnSpec.header}}</mat-header-cell>
+    </ng-container>
+
+    <ng-container *ngIf="isColumnSorted(columnSpec.displayedColumn)">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>{{columnSpec.header}}</mat-header-cell>
+    </ng-container>
+
+    <!--DATA-->
+    <ng-container *ngIf="!isInjected(columnSpec.displayedColumn)">
+      <mat-cell *matCellDef="let data">
+        {{
+        isSerializedDate(data[columnSpec.displayedColumn])
+          ? (data[columnSpec.displayedColumn] | date: _dateFormat)
+          : data[columnSpec.displayedColumn]
+        }}</mat-cell>
+    </ng-container>
+
+    <ng-container *ngIf="isInjected(columnSpec.displayedColumn)">
+      <mat-cell *matCellDef="let data; let dataIdx = dataIndex">
+        <ng-container
+          *ngTemplateOutlet="getInjectedTemplateRef(columnSpec.displayedColumn); context: getViewContext(data, dataIdx)">
+        </ng-container>
+      </mat-cell>
+    </ng-container>
+  </ng-container>
+
+  <ng-container matColumnDef="expand">
+    <mat-header-cell *matHeaderCellDef>&nbsp;</mat-header-cell>
+    <mat-cell *matCellDef="let item; let idx = dataIndex">
+      <!--      <div style="display: flex; flex-direction: row; align-items: center">-->
+      <!--Display action buttons before expand button-->
+      <ng-container *ngIf="attachToExpansionContent?.position === 'before'" [ngTemplateOutlet]="actions"></ng-container>
+
+      <!--Expand button-->
+      <button (click)="(expandedItem = expandedItem === item ? null : item); $event.stopPropagation()"
+              aria-label="expand row"
+              mat-icon-button>
+        <ng-container *ngIf="expandedItem !== item; then iconArrowDown; else iconArrowUp"></ng-container>
+      </button>
+
+      <!--Display action buttons after expand button-->
+      <ng-container *ngIf="attachToExpansionContent?.position === 'after'" [ngTemplateOutlet]="actions"></ng-container>
+
+      <!--Template for injection of action buttons-->
+      <ng-template #actions>
+        <ng-container
+          *ngTemplateOutlet="attachToExpansionContent.templateRef; context: getViewContext(item, idx)">
+        </ng-container>
+      </ng-template>
+      <!--      </div>-->
+    </mat-cell>
+  </ng-container>
+
+  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+  <ng-container matColumnDef="expandedDetail">
+    <mat-cell *matCellDef="let item; let idx = dataIndex">
+      <div *ngIf="item === expandedItem"
+           @expandRowNgIf
+           class="detail-panel-container mat-elevation-z2">
+        <ng-container
+          *ngTemplateOutlet="expansionContent.templateRef; context: getViewContext(item, idx)">
+        </ng-container>
+      </div>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="getDisplayedColumnsWithExpand()"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: getDisplayedColumnsWithExpand()"
+           [class.expanded-row]="expandedItem === row"
+           class="element-row">
+
+
+  </mat-row>
+  <mat-row *matRowDef="let row; columns: ['expandedDetail']"
+           class="expandable-row">
+  </mat-row>
+</mat-table>
+<mat-paginator (page)="onPageChanged($event)"
+               *ngIf="!disablePaginator"
+               [pageSizeOptions]="_pageSizeOptions"
+               [pageSize]="_pageSize"
+               [showFirstLastButtons]="true">
+</mat-paginator>
+
+<ng-template #iconArrowUp>
+  <mat-icon>keyboard_arrow_up</mat-icon>
+</ng-template>
+
+<ng-template #iconArrowDown>
+  <mat-icon>keyboard_arrow_down</mat-icon>
+</ng-template>
