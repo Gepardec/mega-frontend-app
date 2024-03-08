@@ -8,6 +8,7 @@
 
 To start the development server run `nx serve mega-frontend-app`. Open your browser and navigate to http://localhost:4200/. Happy coding!
 
+Important: Used Port must match configured frontendOriginSegment ([environment.ts](apps%2Fmega-frontend-app%2Fsrc%2Fenvironments%2Fenvironment.ts))
 ## Generate code
 
 If you happen to use Nx plugins, you can leverage code generators that might come with it.
