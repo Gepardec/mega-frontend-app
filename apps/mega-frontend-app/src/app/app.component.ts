@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     const config = await firstValueFrom(this.configService.getConfig());
-
+    console.log('config', config);
     this.oAuthService.configure({
       clientId: config.clientId,
       issuer: config.issuer,
@@ -44,8 +44,10 @@ export class AppComponent implements OnInit {
     this.oAuthService.setupAutomaticSilentRefresh();
 
     if (this.userService.loggedInWithGoogle()) {
+      console.log('logged in with google');
       this.userService.retrieveUser();
     } else {
+      console.log('login flow initiated');
       this.oAuthService.initLoginFlow();
     }
   }
