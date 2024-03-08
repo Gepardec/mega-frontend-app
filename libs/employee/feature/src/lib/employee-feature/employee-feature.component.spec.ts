@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { EmployeeFeatureComponent } from './employee-feature.component';
+import { TestingModule } from '@mega/testing';
 
 describe('EmployeeFeatureComponent', () => {
   let component: EmployeeFeatureComponent;
@@ -7,7 +8,7 @@ describe('EmployeeFeatureComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EmployeeFeatureComponent],
+      imports: [EmployeeFeatureComponent, TestingModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(EmployeeFeatureComponent);

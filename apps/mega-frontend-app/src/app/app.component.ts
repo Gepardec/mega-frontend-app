@@ -7,6 +7,7 @@ import { firstValueFrom } from 'rxjs';
 import { UserService } from '../auth/user/user.service';
 import { ConfigService } from '../auth/config/config.service';
 import { AsyncPipe } from '@angular/common';
+import { getBrowserLang, TranslocoService } from '@ngneat/transloco';
 
 @Component({
   standalone: true,
@@ -21,8 +22,11 @@ export class AppComponent implements OnInit {
   constructor(
     private oAuthService: OAuthService,
     private configService: ConfigService,
-    public userService: UserService
-  ) {}
+    public userService: UserService,
+    translocoService: TranslocoService
+  ) {
+    translocoService.setActiveLang(getBrowserLang()!);
+  }
 
   async ngOnInit(): Promise<void> {
     const config = await firstValueFrom(this.configService.getConfig());

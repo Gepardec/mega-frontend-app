@@ -5,8 +5,7 @@ import {
   HttpClientTestingModule,
   HttpTestingController,
 } from '@angular/common/http/testing';
-import { Config } from '@mega/shared/data-model';
-import { LocalStorageService } from '@mega/shared/data-service';
+import { Config } from '../model/Config';
 
 describe('ConfigService', () => {
   let configService: ConfigService;
@@ -19,7 +18,6 @@ describe('ConfigService', () => {
 
     configService = TestBed.inject(ConfigService);
     httpTestingController = TestBed.inject(HttpTestingController);
-    localStorageService = TestBed.inject(LocalStorageService);
   });
 
   it('#should be created', () => {
@@ -48,7 +46,6 @@ describe('ConfigService', () => {
       configService.getBackendUrlWithContext(ConfigMock.context)
     ).toContain(ConfigMock.context);
   });
-
   class ConfigMock {
     static frontendOriginSegment: number = 9876;
     static context: string = '/context/employee';

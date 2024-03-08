@@ -1,4 +1,11 @@
-# MegaFrontendApp
+# MEGA
+
+Make End-of-the-month-process Great Again!
+
+[![developed by: gepardec](https://img.shields.io/badge/developed_by-gepardec-ffd100.svg?style=flat-square)](https://www.gepardec.com/)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![translation with: transloco: prettier](https://img.shields.io/badge/translation_with-transloco-04c2eb.svg?style=flat-square)](https://github.com/jsverse/transloco)
+
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
