@@ -7,6 +7,7 @@ import { UserService } from '../auth/user/user.service';
 import { ConfigService } from '../auth/config/config.service';
 import { AsyncPipe } from '@angular/common';
 import { getBrowserLang, TranslocoService } from '@ngneat/transloco';
+import { MatIconRegistry } from '@angular/material/icon';
 
 @Component({
   standalone: true,
@@ -22,9 +23,11 @@ export class AppComponent implements OnInit {
     private oAuthService: OAuthService,
     private configService: ConfigService,
     public userService: UserService,
-    translocoService: TranslocoService
+    translocoService: TranslocoService,
+    matIconRegistry: MatIconRegistry
   ) {
     translocoService.setActiveLang(getBrowserLang()!);
+    matIconRegistry.setDefaultFontSetClass('material-symbols-outlined');
   }
 
   async ngOnInit(): Promise<void> {

@@ -1,10 +1,10 @@
 <div class="mega-alert flex items-center gap-4">
   <mat-icon
     aria-hidden="false"
-    aria-label="Example home icon"
-    fontIcon="error"
-    class="error-card-entry-content-icon"
-  ></mat-icon>
+    aria-label="Error icon"
+  >
+    error
+  </mat-icon>
   <span>{{ entry?.msg || '' }}</span>
   <section class="flex gap-2">
     @for (d of entry?.dates || []; track d) {
