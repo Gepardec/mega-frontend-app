@@ -6,11 +6,7 @@ import { TestingModule } from '@mega/testing';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        AppComponent,
-        RouterTestingModule,
-        TestingModule,
-      ],
+      imports: [AppComponent, RouterTestingModule, TestingModule],
     }).compileComponents();
   });
 

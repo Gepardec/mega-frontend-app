@@ -1,7 +1,5 @@
 {
-  "extends": [
-    "prettier"
-  ],
+  "extends": ["prettier"],
   "root": true,
   "ignorePatterns": ["**/*"],
   "plugins": ["@nx", "prettier"],
@@ -9,7 +7,8 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
-        "prettier/prettier": ["error",
+        "prettier/prettier": [
+          "error",
           {
             "endOfLine": "auto"
           }
