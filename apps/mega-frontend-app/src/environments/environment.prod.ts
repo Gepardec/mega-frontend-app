@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
   // Base url
-  frontendOriginSegment: 'mega-frontend',
+  frontendOriginSegment: 'mega-frontend-app',
   backendOriginSegment: 'mega-backend',
 };
