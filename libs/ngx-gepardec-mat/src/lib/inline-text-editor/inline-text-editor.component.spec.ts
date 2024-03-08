@@ -8,9 +8,8 @@ describe('InlineTextEditorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [InlineTextEditorComponent]
-})
-    .compileComponents();
+      imports: [InlineTextEditorComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(InlineTextEditorComponent);
     component = fixture.componentInstance;

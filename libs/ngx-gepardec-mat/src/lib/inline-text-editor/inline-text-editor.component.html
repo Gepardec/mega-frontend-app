@@ -1,15 +1,17 @@
-<ng-container *ngIf="!showCommentEditor">
+@if (!showCommentEditor) {
   <p (click)="onStartEditing(value)">{{ value }}</p>
-  <button *ngIf="!value"
-          (click)="onStartEditing(value)"
-          mat-icon-button>
-    <mat-icon>add</mat-icon>
-  </button>
-</ng-container>
+  @if (!value) {
+    <button (click)="onStartEditing(value)" mat-icon-button>
+      <mat-icon>add</mat-icon>
+    </button>
+  }
+}
 
-<gpx-editor-form-field *ngIf="showCommentEditor"
-                       [value]="value"
-                       [maximumLetters]="maximumLetters"
-                       [formFieldWidth]="formFieldWidth"
-                       (valueChange)="valueChange($event)">
-</gpx-editor-form-field>
+@if (showCommentEditor) {
+  <gpx-editor-form-field
+    [value]="value"
+    [maximumLetters]="maximumLetters"
+    [formFieldWidth]="formFieldWidth"
+    (valueChange)="valueChange($event)"
+  />
+}

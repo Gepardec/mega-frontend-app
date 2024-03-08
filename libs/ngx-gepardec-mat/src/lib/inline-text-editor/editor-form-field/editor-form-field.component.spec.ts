@@ -8,9 +8,8 @@ describe('EditorFormFieldComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [EditorFormFieldComponent]
-})
-    .compileComponents();
+      imports: [EditorFormFieldComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(EditorFormFieldComponent);
     component = fixture.componentInstance;

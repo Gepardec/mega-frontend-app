@@ -1,8 +1,14 @@
-import {Directive, EventEmitter, HostBinding, HostListener, Output} from '@angular/core';
+import {
+  Directive,
+  EventEmitter,
+  HostBinding,
+  HostListener,
+  Output,
+} from '@angular/core';
 
 @Directive({
-    selector: '[gpxDropZone]',
-    standalone: true
+  selector: '[gpxDropZone]',
+  standalone: true,
 })
 export class DropzoneDirective {
   @Output() fileDropped = new EventEmitter<any>();

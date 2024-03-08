@@ -1,6 +1,6 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {ExpandableDynamicTableComponent} from './expandable-dynamic-table.component';
+import { ExpandableDynamicTableComponent } from './expandable-dynamic-table.component';
 
 describe('ExpandableDynamicTableComponent', () => {
   let component: ExpandableDynamicTableComponent;
@@ -8,9 +8,8 @@ describe('ExpandableDynamicTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [ExpandableDynamicTableComponent]
-})
-      .compileComponents();
+      imports: [ExpandableDynamicTableComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ExpandableDynamicTableComponent);
     component = fixture.componentInstance;

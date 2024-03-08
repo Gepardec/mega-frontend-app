@@ -1,18 +1,33 @@
 <mat-form-field [style.width]="formFieldWidth">
-    <textarea #autosize="cdkTextareaAutosize"
-              #textarea
-              [maxLength]="maximumLetters"
-              [value]="value ? value : ''"
-              cdkAutosizeMaxRows="3"
-              cdkAutosizeMinRows="1"
-              cdkTextareaAutosize
-              matInput>
-    </textarea>
-  <mat-hint align="end">{{ textarea.value.length }} / {{ maximumLetters }}</mat-hint>
+  <textarea
+    #autosize="cdkTextareaAutosize"
+    #textarea
+    [maxLength]="maximumLetters"
+    [value]="value ? value : ''"
+    cdkAutosizeMaxRows="3"
+    cdkAutosizeMinRows="1"
+    cdkTextareaAutosize
+    matInput
+  ></textarea>
+  <mat-hint align="end">
+    {{ textarea.value.length }} / {{ maximumLetters }}
+  </mat-hint>
 </mat-form-field>
-<button (click)="onCancel($event, textarea)" aria-label="arrow-back" class="cancel" mat-mini-fab>
+<button
+  (click)="onCancel($event, textarea)"
+  aria-label="arrow-back"
+  class="cancel"
+  mat-mini-fab
+>
   <mat-icon>arrow_back</mat-icon>
 </button>
-<button (click)="onSave(textarea)" color="primary" aria-label="save" class="save" id="savebutton" mat-mini-fab>
+<button
+  (click)="onSave(textarea)"
+  color="primary"
+  aria-label="save"
+  class="save"
+  id="savebutton"
+  mat-mini-fab
+>
   <mat-icon>save</mat-icon>
 </button>

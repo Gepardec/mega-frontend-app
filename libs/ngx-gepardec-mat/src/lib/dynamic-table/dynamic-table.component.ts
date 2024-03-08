@@ -21,13 +21,7 @@ import {
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { DynamicTableConfig } from './DynamicTableConfig';
 import { CustomColumnDirective } from './custom-column.directive';
-import {
-  DatePipe,
-  NgClass,
-  NgFor,
-  NgIf,
-  NgTemplateOutlet,
-} from '@angular/common';
+import { DatePipe, NgClass, NgTemplateOutlet } from '@angular/common';
 
 export function DYNAMIC_TABLE_DEFAULT_CONFIG_FACTORY(): DynamicTableConfig {
   return {
@@ -55,8 +49,6 @@ export interface ViewContext<T> {
   imports: [
     MatTableModule,
     MatSortModule,
-    NgFor,
-    NgIf,
     NgClass,
     NgTemplateOutlet,
     MatPaginatorModule,

@@ -1,5 +1,5 @@
-import {CustomColumnDirective} from './custom-column.directive';
-import {TemplateRef} from '@angular/core';
+import { CustomColumnDirective } from './custom-column.directive';
+import { TemplateRef } from '@angular/core';
 
 describe('CustomColumnDirective', () => {
   it('should create an instance', () => {

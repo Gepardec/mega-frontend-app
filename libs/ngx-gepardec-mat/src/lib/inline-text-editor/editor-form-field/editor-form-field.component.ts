@@ -7,24 +7,29 @@ import {
   Input,
   NgZone,
   Output,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
 import { CdkTextareaAutosize, TextFieldModule } from '@angular/cdk/text-field';
-import {take} from 'rxjs/operators';
+import { take } from 'rxjs/operators';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
-    selector: 'gpx-editor-form-field',
-    templateUrl: './editor-form-field.component.html',
-    styleUrls: ['./editor-form-field.component.scss'],
-    standalone: true,
-    imports: [MatFormFieldModule, TextFieldModule, MatInputModule, MatButtonModule, MatIconModule]
+  selector: 'gpx-editor-form-field',
+  templateUrl: './editor-form-field.component.html',
+  styleUrls: ['./editor-form-field.component.scss'],
+  standalone: true,
+  imports: [
+    MatFormFieldModule,
+    TextFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+  ],
 })
 export class EditorFormFieldComponent implements AfterViewInit {
-
   @Input() value: string = '';
   @Input() maximumLetters!: number;
 
@@ -35,9 +40,10 @@ export class EditorFormFieldComponent implements AfterViewInit {
   @ViewChild('autosize') autosize!: CdkTextareaAutosize;
   @ViewChild('textarea') textarea!: ElementRef;
 
-  constructor(private _ngZone: NgZone,
-              private changeDectectorRef: ChangeDetectorRef) {
-  }
+  constructor(
+    private _ngZone: NgZone,
+    private changeDectectorRef: ChangeDetectorRef
+  ) {}
 
   ngAfterViewInit(): void {
     this.textarea.nativeElement.focus();
@@ -46,10 +52,9 @@ export class EditorFormFieldComponent implements AfterViewInit {
   }
 
   triggerResize() {
-    this._ngZone.onStable.pipe(take(1))
-      .subscribe(() => {
-        this.autosize.resizeToFitContent(true);
-      });
+    this._ngZone.onStable.pipe(take(1)).subscribe(() => {
+      this.autosize.resizeToFitContent(true);
+    });
   }
 
   onCancel(event: any, inputElement: HTMLTextAreaElement) {

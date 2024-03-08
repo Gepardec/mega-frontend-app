@@ -1,5 +1,5 @@
-import {ExpansionContentDirective} from './expansion-content.directive';
-import {TemplateRef} from '@angular/core';
+import { ExpansionContentDirective } from './expansion-content.directive';
+import { TemplateRef } from '@angular/core';
 
 describe('ExpansionContentDirective', () => {
   it('should create an instance', () => {

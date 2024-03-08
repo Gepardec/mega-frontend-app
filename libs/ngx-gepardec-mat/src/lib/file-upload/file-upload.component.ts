@@ -1,18 +1,16 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { NgIf } from '@angular/common';
 import { DropzoneDirective } from './drop-zone.directive';
 
 @Component({
-    selector: 'gpx-file-upload',
-    templateUrl: './file-upload.component.html',
-    styleUrls: ['./file-upload.component.scss'],
-    standalone: true,
-    imports: [DropzoneDirective, NgIf, MatButtonModule, MatIconModule]
+  selector: 'gpx-file-upload',
+  templateUrl: './file-upload.component.html',
+  styleUrls: ['./file-upload.component.scss'],
+  standalone: true,
+  imports: [DropzoneDirective, MatButtonModule, MatIconModule],
 })
 export class FileUploadComponent {
-
   fileName: string = '';
   _uploadedFiles: Array<File> | undefined = [];
 
@@ -28,8 +26,8 @@ export class FileUploadComponent {
     this.fileName = this.joinFileNames(this._uploadedFiles);
   }
 
-  @Output() uploadedFilesChange: EventEmitter<Array<File>> = new EventEmitter<Array<File>>();
-  @Output() maxNumberOfFilesExceededEvent: EventEmitter<Array<File>> = new EventEmitter<Array<File>>();
+  @Output() uploadedFilesChange = new EventEmitter<Array<File>>();
+  @Output() maxNumberOfFilesExceededEvent = new EventEmitter<Array<File>>();
 
   onFileSelected(event: any) {
     const fileList: FileList = event.target.files;
@@ -38,7 +36,7 @@ export class FileUploadComponent {
   }
 
   onFilesDropped(fileList: FileList): void {
-    let files: File[] = Array.from(fileList)
+    let files: File[] = Array.from(fileList);
     if (!this.multiple && files.length > 1) {
       files = Array.of(files[0]);
     }
@@ -69,6 +67,6 @@ export class FileUploadComponent {
     if (!files) {
       return '';
     }
-    return files.map(file => file.name).join(', ');
+    return files.map((file) => file.name).join(', ');
   }
 }

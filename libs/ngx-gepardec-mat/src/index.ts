@@ -1,10 +1,10 @@
 // Inline Text Editor
-export * from './lib/inline-text-editor/inline-text-editor.component'
+export * from './lib/inline-text-editor/inline-text-editor.component';
 export * from './lib/inline-text-editor/editor-form-field/editor-form-field.component';
 
 // File Upload
-export * from './lib/file-upload/file-upload.component'
-export * from './lib/file-upload/drop-zone.directive'
+export * from './lib/file-upload/file-upload.component';
+export * from './lib/file-upload/drop-zone.directive';
 
 // Dynamic table
 export * from './lib/dynamic-table/dynamic-table.component';

@@ -8,9 +8,8 @@ describe('FileUploadWithTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [FileUploadWithTableComponent]
-})
-    .compileComponents();
+      imports: [FileUploadWithTableComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(FileUploadWithTableComponent);
     component = fixture.componentInstance;
