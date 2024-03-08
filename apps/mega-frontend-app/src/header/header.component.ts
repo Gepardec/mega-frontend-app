@@ -15,6 +15,7 @@ import { UserService } from '../auth/user/user.service';
 import { map } from 'rxjs';
 import { User } from '../auth/model/User';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'mega-app-header',
@@ -34,6 +35,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     AvatarComponent,
     DatepickerMonthYearComponent,
     MatTooltipModule,
+    RouterLink,
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],

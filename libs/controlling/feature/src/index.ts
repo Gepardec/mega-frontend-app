@@ -1,1 +1,1 @@
-export * from './lib/controlling-feature/controlling-feature.component';
+export * from './lib/controlling-page/controlling-page.component';

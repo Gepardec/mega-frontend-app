@@ -2,6 +2,10 @@
 @use '../../../../../libs/shared/ui/src' as ui-shared;
 @use '../../../../../libs/employee/ui/src' as ui-employee;
 @use 'themes/button-toggle-theme' as button-toggle;
+@use '../../../../../libs/ngx-gepardec-mat/src/lib/dynamic-table/dynamic-table-theme'
+  as gpx-dynamic-table;
+@use '../../../../../libs/ngx-gepardec-mat/src/lib/expandable-dynamic-table/expandable-dynamic-table-theme'
+  as gpx-expandable-dynamic-table;
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
@@ -121,7 +125,6 @@ $mega-typography-config: mat.define-typography-config(
       $font-size: 57px,
       //$font-style: italic,
       $font-weight: 400,
-
       $line-height: 60px,
       /* 105.263% */ $letter-spacing: 0.5px
     ),
@@ -253,3 +256,9 @@ $mega-accent: mat.get-color-from-palette($mega-palette-accent, 600);
 @include button-toggle.theme($mega-dark-theme);
 @include ui-shared.avatar-theme($mega-dark-theme);
 @include ui-employee.time-violation-alert-theme($mega-dark-theme);
+
+// ----------------------------------------------------------
+// NGX-GEPARDEC-MAT THEMING
+// ----------------------------------------------------------
+@include gpx-dynamic-table.theme($mega-dark-theme);
+@include gpx-expandable-dynamic-table.theme($mega-dark-theme);
