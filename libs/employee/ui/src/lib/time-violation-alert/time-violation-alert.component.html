@@ -7,10 +7,12 @@
   ></mat-icon>
   <span>{{ entry?.msg || '' }}</span>
   <section class="flex gap-2">
-    <mat-chip-set *ngFor="let d of entry?.dates || []">
-      <mat-chip class="error-card-entry-content-chip">
-        {{ d | date: 'dd.MM.yyyy' }}
-      </mat-chip>
-    </mat-chip-set>
+    @for (d of entry?.dates || []; track d) {
+      <mat-chip-set>
+        <mat-chip class="error-card-entry-content-chip">
+          {{ d | date: 'dd.MM.yyyy' }}
+        </mat-chip>
+      </mat-chip-set>
+    }
   </section>
 </div>
