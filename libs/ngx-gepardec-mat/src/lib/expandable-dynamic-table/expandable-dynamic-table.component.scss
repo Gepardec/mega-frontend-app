@@ -22,17 +22,13 @@ mat-row.expandable-row {
 
 // Applies this style to every 4th mat-row, starting at the 4th one
 .mat-mdc-row:nth-child(4n + 4) {
-  background-color: var(--rowColor);
+  background-color: var(--gpx-expandable-dynamic-table-alternate-row-color);
+}
+
+mat-row.element-row:not(.expanded-row):hover {
+  background: var(--gpx-expandable-dynamic-table-hover-row-color)
 }
 
 .mat-column-expand {
   width: auto;
-}
-
-mat-row.element-row:not(.expanded-row):hover {
-  background: whitesmoke;
-}
-
-mat-row.element-row:not(.expanded-row):active {
-  background: #efefef;
 }

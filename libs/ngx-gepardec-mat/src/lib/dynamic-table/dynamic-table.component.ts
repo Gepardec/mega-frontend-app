@@ -1,5 +1,4 @@
 import {
-  AfterViewInit,
   Component,
   ContentChildren,
   ElementRef,
@@ -32,7 +31,6 @@ import {
 
 export function DYNAMIC_TABLE_DEFAULT_CONFIG_FACTORY(): DynamicTableConfig {
   return {
-    rowColor: '#dedede',
     dateFormat: 'dd.MM.yyyy HH:mm',
     pageSizeOptions: [10, 20, 50, 100],
   };
@@ -65,7 +63,7 @@ export interface ViewContext<T> {
     DatePipe,
   ],
 })
-export class DynamicTableComponent<T> implements AfterViewInit {
+export class DynamicTableComponent<T> {
   dataSource = new MatTableDataSource<T>();
 
   @Input() set data(data: T[]) {
@@ -88,10 +86,6 @@ export class DynamicTableComponent<T> implements AfterViewInit {
     this._dateFormat = format;
   }
 
-  @Input() set rowColor(color: `#${string}` | string) {
-    this._rowColor = color;
-  }
-
   @Input() set pageSizeOptions(pageSizeOptions: number[]) {
     this._pageSizeOptions = pageSizeOptions;
     if (pageSizeOptions.length > 0) {
@@ -103,7 +97,6 @@ export class DynamicTableComponent<T> implements AfterViewInit {
     new EventEmitter<PageEvent>();
 
   /*Internal fields*/
-  _rowColor!: `#${string}` | string;
   _dateFormat!: string;
   _pageSizeOptions!: number[];
   _pageSize!: number;
@@ -125,10 +118,6 @@ export class DynamicTableComponent<T> implements AfterViewInit {
     };
 
     if (tableConfig) {
-      if (tableConfig.rowColor) {
-        this._rowColor = tableConfig.rowColor;
-      }
-
       if (tableConfig.dateFormat) {
         this._dateFormat = tableConfig.dateFormat;
       }
@@ -138,10 +127,6 @@ export class DynamicTableComponent<T> implements AfterViewInit {
         this._pageSize = this._pageSizeOptions[0];
       }
     }
-  }
-
-  ngAfterViewInit(): void {
-    this.updateColorInCss();
   }
 
   isSerializedDate(value: any): boolean {
@@ -154,13 +139,6 @@ export class DynamicTableComponent<T> implements AfterViewInit {
 
   isColumnSorted(columnName: Extract<keyof T | string, string>): boolean {
     return !this.columnsExcludedFromSort.includes(columnName);
-  }
-
-  updateColorInCss() {
-    this.elementRef.nativeElement.style.setProperty(
-      '--rowColor',
-      this._rowColor
-    );
   }
 
   isInjected(columnName: Extract<keyof T | string, string>): boolean {

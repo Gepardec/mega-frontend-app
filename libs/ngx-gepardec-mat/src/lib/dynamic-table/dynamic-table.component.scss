@@ -3,9 +3,9 @@ table {
 }
 
 .mat-mdc-row:nth-child(odd) {
-  background-color: var(--rowColor);
+  background-color: var(--gpx-dynamic-table-alternate-row-color);
 }
 
 mat-row:not(.expanded-row):hover {
-  background: whitesmoke;
+  background: var(--gpx-dynamic-table-hover-row-color)
 }

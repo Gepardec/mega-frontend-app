@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/ngx-gepardec-mat/src",
   "prefix": "gpx",
-  "tags": [],
+  "tags": ["domain:shared"],
   "projectType": "library",
   "targets": {
     "build": {
