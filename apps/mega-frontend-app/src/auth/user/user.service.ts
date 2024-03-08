@@ -24,16 +24,15 @@ export class UserService {
   public retrieveUser(): void {
     this.httpClient
       .get<User>(this.configService.getBackendUrlWithContext('/user'))
-      .subscribe((result) => {
-        this.user$.next(result);
+      .subscribe({
+        next: (result) => {
+          this.user$.next(result);
+        },
+        error: () => this.invalidateUser(), // Invalidate user if the request fails (auto-redirection to gepardec-sso login page)
       });
   }
 
   public logout(): void {
-    this.invalidateUser();
-  }
-
-  public logoutWithoutRedirect(): void {
     this.invalidateUser();
   }
 
