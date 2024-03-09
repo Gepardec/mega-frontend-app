@@ -56,10 +56,27 @@
       </section>
     </mat-card-content>
   </mat-card>
-  <mega-employee-ui-key-value-card
-    [data]="dummyData"
-    [title]="'title'"
-    [link]="'ijwg'"
-    [linkDisplayName]="'Link'"
-  />
+  <div class="flex flex-row gap-5">
+    <mega-employee-ui-key-value-card
+      [data]="dummyData"
+      [title]="'Abwesenheiten'"
+      [link]="'Link'"
+      [linkDisplayName]="'Personio'"
+      class="w-full"
+    />
+    <mega-employee-ui-key-value-card
+      [data]="dummyData"
+      [title]="'Bürozeiten'"
+      [link]="'Link'"
+      [linkDisplayName]="'Personio'"
+      class="w-full"
+    />
+    <mega-employee-ui-key-value-card
+      [data]="dummyData"
+      [title]="'Belege'"
+      [link]="'Link'"
+      [linkDisplayName]="'Auswertung ZEP'"
+      class="w-full"
+    />
+  </div>
 </main>
