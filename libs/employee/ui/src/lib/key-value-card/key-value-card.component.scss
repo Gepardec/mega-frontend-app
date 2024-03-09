@@ -8,3 +8,10 @@
 .reference-link {
   color: white;
 }
+
+.mat-mdc-card-content {
+  // to overrule specificity of mat-mdc-card-content
+  &.flex {
+    display: flex;
+  }
+}

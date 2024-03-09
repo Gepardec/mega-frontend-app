@@ -6,7 +6,7 @@
     <a [href]="link" class="reference-link">{{ linkDisplayName }}</a>
   </mat-card-header>
 
-  <mat-card-content class="flex flex-col gap-5px mt-15px">
+  <mat-card-content class="flex flex-col gap-2 mt-15">
     @for (d of data; track d) {
       <div class="flex flex-row justify-between">
         @for (item of d | keyvalue; track item.key) {
