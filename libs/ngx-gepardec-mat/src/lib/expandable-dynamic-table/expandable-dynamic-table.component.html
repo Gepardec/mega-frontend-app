@@ -76,7 +76,7 @@
       <ng-template #actions>
         <ng-container
           *ngTemplateOutlet="
-            attachToExpansionContent.templateRef;
+            attachToExpansionContent!.templateRef;
             context: getViewContext(item, idx)
           "
         />
