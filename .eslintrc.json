@@ -1,11 +1,18 @@
 {
+  "extends": ["prettier"],
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nx"],
+  "plugins": ["@nx", "prettier"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
+        "prettier/prettier": [
+          "error",
+          {
+            "endOfLine": "auto"
+          }
+        ],
         "@nx/enforce-module-boundaries": [
           "error",
           {
@@ -22,21 +29,18 @@
               },
               {
                 "sourceTag": "domain:employee",
-                "onlyDependOnLibsWithTags": [
-                  "domain:employee", "domain:shared"
-                ]
+                "onlyDependOnLibsWithTags": ["domain:employee", "domain:shared"]
               },
               {
                 "sourceTag": "domain:controlling",
                 "onlyDependOnLibsWithTags": [
-                  "domain:controlling", "domain:shared"
+                  "domain:controlling",
+                  "domain:shared"
                 ]
               },
               {
                 "sourceTag": "domain:shared",
-                "onlyDependOnLibsWithTags": [
-                  "domain:shared"
-                ]
+                "onlyDependOnLibsWithTags": ["domain:shared"]
               },
               {
                 "sourceTag": "type:feature",
@@ -57,16 +61,11 @@
               },
               {
                 "sourceTag": "type:domain-logic",
-                "onlyDependOnLibsWithTags": [
-                  "type:domain-logic",
-                  "type:util"
-                ]
+                "onlyDependOnLibsWithTags": ["type:domain-logic", "type:util"]
               },
               {
                 "sourceTag": "type:util",
-                "onlyDependOnLibsWithTags": [
-                  "type:util"
-                ]
+                "onlyDependOnLibsWithTags": ["type:util"]
               }
             ]
           }

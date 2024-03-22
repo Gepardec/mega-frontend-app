@@ -4,22 +4,16 @@
   "projectType": "application",
   "prefix": "mega-app",
   "sourceRoot": "apps/mega-frontend-app/src",
-  "tags": [
-    "scope:app"
-  ],
+  "tags": ["scope:app"],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/mega-frontend-app",
         "index": "apps/mega-frontend-app/src/index.html",
         "browser": "apps/mega-frontend-app/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/mega-frontend-app/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -27,17 +21,24 @@
           "apps/mega-frontend-app/src/assets"
         ],
         "styles": [
-          "apps/mega-frontend-app/src/styles.scss"
+          "apps/mega-frontend-app/src/styles.scss",
+          "material-symbols/outlined.scss"
         ],
         "scripts": []
       },
       "configurations": {
         "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/mega-frontend-app/src/environments/environment.ts",
+              "with": "apps/mega-frontend-app/src/environments/environment.prod.ts"
+            }
+          ],
           "budgets": [
             {
               "type": "initial",
               "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumError": "2mb"
             },
             {
               "type": "anyComponentStyle",
@@ -75,21 +76,11 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
-      "options": {
-        "lintFilePatterns": [
-          "apps/mega-frontend-app/**/*.ts",
-          "apps/mega-frontend-app/**/*.html"
-        ]
-      }
+      "outputs": ["{options.outputFile}"]
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/mega-frontend-app/jest.config.ts"
       }
@@ -108,9 +99,7 @@
         "configDir": "apps/mega-frontend-app/.storybook",
         "browserTarget": "mega-frontend-app:build-storybook",
         "compodoc": false,
-        "styles": [
-          "apps/mega-frontend-app/src/styles.scss"
-        ]
+        "styles": ["apps/mega-frontend-app/src/styles.scss"]
       },
       "configurations": {
         "ci": {
@@ -120,9 +109,7 @@
     },
     "build-storybook": {
       "executor": "@storybook/angular:build-storybook",
-      "outputs": [
-        "{options.outputDir}"
-      ],
+      "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/mega-frontend-app",
         "configDir": "apps/mega-frontend-app/.storybook",

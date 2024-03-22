@@ -1,0 +1,17 @@
+{
+  "name": "@gepardec/ngx-gepardec-mat",
+  "version": "17.0.0",
+  "peerDependencies": {
+    "@angular/cdk": "^17.0.0",
+    "@angular/common": "^17.0.0",
+    "@angular/core": "^17.0.0",
+    "@angular/material": "^17.0.0",
+    "@angular/animations": "~17.0.0",
+    "rxjs": "~7.8.0"
+  },
+  "dependencies": {},
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  }
+}

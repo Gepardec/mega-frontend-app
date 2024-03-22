@@ -1,0 +1,21 @@
+.avatar {
+  background-color: var(--shared-ui-avatar-background);
+  border-color: var(--shared-ui-avatar-border-color);
+  width: var(--shared-ui-avatar-size);
+  height: var(--shared-ui-avatar-size);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 9999px;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.avatar-text {
+  color: var(--shared-ui-avatar-text-color);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+}

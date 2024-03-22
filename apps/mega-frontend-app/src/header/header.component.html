@@ -1,0 +1,38 @@
+<mat-toolbar>
+  <mat-toolbar-row class="flex-wrap items-center gap-x-8">
+    <!-- Logo -->
+    <img class="logo" src="/assets/logo.png" alt="MEGA App Logo" />
+
+    <!-- Menu -->
+    <mat-button-toggle-group
+      value="employee"
+      class="flex-shrink-0 toggle-menu text-sm"
+    >
+      <mat-button-toggle value="employee" routerLink="/mein-mega">
+        Mein Mega
+      </mat-button-toggle>
+      <mat-button-toggle value="controlling" routerLink="/controlling">
+        Controlling
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <!-- Month & Year Select -->
+    <mega-shared-ui-datepicker-month-year
+      class="month-year-size flex-1 density-n4"
+      [date]="dummyDate"
+    ></mega-shared-ui-datepicker-month-year>
+
+    <!-- Buttons & Avatar -->
+    <section class="ml-auto flex flex-shrink-0 items-center">
+      <button mat-icon-button color="primary" (click)="userService.logout()">
+        <mat-icon>logout</mat-icon>
+      </button>
+
+      <!-- Avatar -->
+      <mega-shared-ui-avatar
+        [initials]="userInitials$ | async"
+        class="ml-1.5"
+      />
+    </section>
+  </mat-toolbar-row>
+</mat-toolbar>

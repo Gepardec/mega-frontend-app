@@ -3,34 +3,13 @@
   --mat-card-title-text-size: 1.5rem;
 }
 
-.flex {
-  display: flex;
-}
-
-.flex-row {
-  flex-direction: row;
-}
-
-.flex-column {
-  flex-direction: column;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.align-center {
-  align-items: center;
-}
-
 .reference-link {
   color: white;
 }
 
-.mt-15 {
-  margin-top: 15px;
-}
-
-.gap-5 {
-  gap: 5px;
+.mat-mdc-card-content {
+  // to overrule specificity of mat-mdc-card-content
+  &.flex {
+    display: flex;
+  }
 }

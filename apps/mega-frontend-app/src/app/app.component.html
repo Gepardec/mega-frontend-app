@@ -1,2 +1,4 @@
-<mega-app-nx-welcome></mega-app-nx-welcome>
-<router-outlet></router-outlet>
+@if (userService.user$ | async) {
+  <mega-app-header />
+  <router-outlet />
+}

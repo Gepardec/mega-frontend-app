@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@gepardec/ngx-gepardec-mat": ["libs/ngx-gepardec-mat/src/index.ts"],
       "@mega/controlling/domain": ["libs/controlling/domain/src/index.ts"],
       "@mega/controlling/feature": ["libs/controlling/feature/src/index.ts"],
       "@mega/controlling/ui": ["libs/controlling/ui/src/index.ts"],
@@ -25,7 +26,8 @@
       "@mega/employee/util": ["libs/employee/util/src/index.ts"],
       "@mega/shared/domain": ["libs/shared/domain/src/index.ts"],
       "@mega/shared/ui": ["libs/shared/ui/src/index.ts"],
-      "@mega/shared/util": ["libs/shared/util/src/index.ts"]
+      "@mega/shared/util": ["libs/shared/util/src/index.ts"],
+      "@mega/testing": ["libs/testing/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,16 +1,18 @@
 <mat-card>
-  <mat-card-header class="flex flex-row justify-between align-center">
+  <mat-card-header class="flex flex-row justify-between items-center">
     <mat-card-title>
       <i>{{ title }}</i>
     </mat-card-title>
     <a [href]="link" class="reference-link">{{ linkDisplayName }}</a>
   </mat-card-header>
 
-  <mat-card-content class="flex flex-column gap-5 mt-15">
-    @for (d of data; track d.key) {
+  <mat-card-content class="flex flex-col gap-2 mt-15">
+    @for (d of data; track d) {
       <div class="flex flex-row justify-between">
-        <div>{{ d.key }}:</div>
-        <div>{{ d.value }}</div>
+        @for (item of d | keyvalue; track item.key) {
+          <div>{{ item.key }}</div>
+          <div>{{ item.value }}</div>
+        }
       </div>
     }
   </mat-card-content>

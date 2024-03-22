@@ -1,0 +1,75 @@
+<div class="component-container">
+  <gpx-file-upload
+    [uploadedFiles]="dataSource"
+    (uploadedFilesChange)="updateDataSource($event)"
+    [requiredFileType]="requiredFileType"
+    [uploadTitle]="'Zum ändern klicken'"
+    [multiple]="multiple"
+    [maxSize]="maxSize"
+    [noFileUploadedText]="'Zum hochladen klicken'"
+    [allowOnlyFolders]="allowOnlyFolders"
+  />
+
+  @if (!!dataSource && dataSource.length > 0) {
+    <gpx-dynamic-table
+      [columnSpecs]="columnSpecs"
+      [disablePaginator]="true"
+      [columnsExcludedFromSort]="['actions']"
+      [data]="dataSource"
+    >
+      <ng-template [gpxCustomColumn]="'lastModified'" let-item>
+        <span>{{ item.lastModified | date: 'dd.MM.yyyy' }}</span>
+      </ng-template>
+
+      <ng-template [gpxCustomColumn]="'size'" let-item>
+        <span>{{ formatBytes(item.size) }}</span>
+      </ng-template>
+
+      <ng-template [gpxCustomColumn]="'actions'" let-item>
+        <div class="actions-container">
+          @if (isUploading(item)) {
+            <mat-progress-spinner
+              color="primary"
+              mode="indeterminate"
+              class="state-indicator"
+            />
+          }
+
+          @if (!isUploading(item) && !isUploaded(item)) {
+            <button
+              (click)="upload(item)"
+              [disabled]="uploadCallback === undefined"
+              mat-icon-button
+            >
+              <mat-icon>upload_file</mat-icon>
+            </button>
+          }
+
+          @if (isUploaded(item)) {
+            <mat-icon class="state-indicator">done</mat-icon>
+          }
+
+          <button
+            (click)="delete(item)"
+            [disabled]="deleteCallback === undefined"
+            mat-icon-button
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </ng-template>
+    </gpx-dynamic-table>
+
+    <div class="upload-all-container">
+      <button
+        (click)="uploadAll()"
+        [disabled]="isAllUploaded()"
+        color="primary"
+        mat-raised-button
+      >
+        <mat-icon>upload</mat-icon>
+        ALLES HOCHLADEN
+      </button>
+    </div>
+  }
+</div>

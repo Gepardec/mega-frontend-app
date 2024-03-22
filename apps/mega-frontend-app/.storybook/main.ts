@@ -2,9 +2,9 @@ import type { StorybookConfig } from '@storybook/angular';
 
 const config: StorybookConfig = {
   stories: ['../../../libs/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
+  // '@whitespace/storybook-addon-html' cannot be used ATM, because it is not compatible with Prettier > 3
   addons: [
     '@storybook/addon-essentials',
-    '@whitespace/storybook-addon-html',
     '@storybook/addon-a11y',
     'storybook-design-token',
   ],

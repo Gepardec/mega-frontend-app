@@ -1,1 +1,82 @@
-<p>employee-feature works!</p>
+<main class="px-10 pt-20 flex flex-col gap-10">
+  <mega-employee-ui-time-violations
+    title="dummytitle"
+    [entries]="dummyEntries"
+  ></mega-employee-ui-time-violations>
+  <!--  Dummy Component, to be removed in future-->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Controlling</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <section class="mt-5 flex flex-wrap items-center gap-10">
+        <mat-button-toggle-group value="project">
+          <mat-button-toggle value="project">
+            Projekt / Vorgang
+          </mat-button-toggle>
+          <mat-button-toggle value="emplyoee">Mitarbeiter*in</mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <mat-form-field
+          appearance="outline"
+          subscriptSizing="dynamic"
+          class="!min-w-[180px] flex-1"
+        >
+          <mat-select placeholder="Mitarbeiter*in">
+            <mat-option value="123">123</mat-option>
+            <mat-option value="321">321</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field
+          appearance="outline"
+          subscriptSizing="dynamic"
+          class="!min-w-[180px] flex-1"
+        >
+          <mat-select placeholder="Projekt / Vorgang">
+            <mat-option value="123">123</mat-option>
+            <mat-option value="321">321</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field
+          appearance="outline"
+          subscriptSizing="dynamic"
+          class="!min-w-[180px] max-w-[540px] flex-1"
+        >
+          <input matInput [matDatepicker]="picker" />
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-checkbox>Meine</mat-checkbox>
+      </section>
+    </mat-card-content>
+  </mat-card>
+  <div class="flex flex-row gap-5">
+    <mega-employee-ui-key-value-card
+      [data]="dummyData"
+      [title]="'Abwesenheiten'"
+      [link]="'Link'"
+      [linkDisplayName]="'Personio'"
+      class="w-full"
+    />
+    <mega-employee-ui-key-value-card
+      [data]="dummyData"
+      [title]="'Bürozeiten'"
+      [link]="'Link'"
+      [linkDisplayName]="'Personio'"
+      class="w-full"
+    />
+    <mega-employee-ui-key-value-card
+      [data]="dummyData"
+      [title]="'Belege'"
+      [link]="'Link'"
+      [linkDisplayName]="'Auswertung ZEP'"
+      class="w-full"
+    />
+  </div>
+</main>

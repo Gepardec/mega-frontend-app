@@ -1,0 +1,17 @@
+@if (!showCommentEditor) {
+  <p (click)="onStartEditing(value)">{{ value }}</p>
+  @if (!value) {
+    <button (click)="onStartEditing(value)" mat-icon-button>
+      <mat-icon>add</mat-icon>
+    </button>
+  }
+}
+
+@if (showCommentEditor) {
+  <gpx-editor-form-field
+    [value]="value"
+    [maximumLetters]="maximumLetters"
+    [formFieldWidth]="formFieldWidth"
+    (valueChange)="valueChange($event)"
+  />
+}

@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-import { KeyValueModel } from './key-value-model';
 
 @Component({
   selector: 'mega-employee-ui-key-value-card',
@@ -13,7 +12,7 @@ import { KeyValueModel } from './key-value-model';
 })
 export class KeyValueCardComponent {
   @Input({ required: true })
-  data!: KeyValueModel[];
+  data!: Record<string, string>[];
 
   @Input({ required: true })
   title!: string;
