@@ -20,7 +20,10 @@
           "apps/mega-frontend-app/src/favicon.ico",
           "apps/mega-frontend-app/src/assets"
         ],
-        "styles": ["apps/mega-frontend-app/src/styles.scss"],
+        "styles": [
+          "apps/mega-frontend-app/src/styles.scss",
+          "material-symbols/outlined.scss"
+        ],
         "scripts": []
       },
       "configurations": {
