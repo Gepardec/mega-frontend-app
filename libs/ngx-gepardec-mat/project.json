@@ -31,14 +31,7 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": [
-          "libs/ngx-gepardec-mat/**/*.ts",
-          "libs/ngx-gepardec-mat/**/*.html",
-          "libs/ngx-gepardec-mat/package.json"
-        ]
-      }
+      "outputs": ["{options.outputFile}"]
     }
   }
 }
