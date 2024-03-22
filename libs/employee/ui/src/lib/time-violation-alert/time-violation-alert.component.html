@@ -1,13 +1,8 @@
 <div class="mega-alert flex items-center gap-4">
-  <mat-icon
-    aria-hidden="false"
-    aria-label="Error icon"
-  >
-    error
-  </mat-icon>
-  <span>{{ entry?.msg || '' }}</span>
+  <mat-icon aria-hidden="false" aria-label="Error icon">error</mat-icon>
+  <span>{{ entry.msg || '' }}</span>
   <section class="flex gap-2">
-    @for (d of entry?.dates || []; track d) {
+    @for (d of entry.dates || []; track d) {
       <mat-chip-set>
         <mat-chip class="error-card-entry-content-chip">
           {{ d | date: 'dd.MM.yyyy' }}

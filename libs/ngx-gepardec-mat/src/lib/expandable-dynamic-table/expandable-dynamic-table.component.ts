@@ -49,7 +49,7 @@ export class ExpandableDynamicTableComponent<
   @ContentChild(ExpansionContentDirective)
   expansionContent!: ExpansionContentDirective;
   @ContentChild(AttachToExpansionContentDirective)
-  attachToExpansionContent!: AttachToExpansionContentDirective;
+  attachToExpansionContent?: AttachToExpansionContentDirective;
 
   constructor(
     protected elRef: ElementRef,
