@@ -1,3 +1,9 @@
+@use '@angular/material' as mat;
+
+:host {
+  color: var(--mega-employee-ui-time-violation-alert-text-color);
+}
+
 .error-card-entry-content-chip {
   --mdc-chip-elevated-container-color: transparent;
   border: 1px solid white;
@@ -7,5 +13,5 @@
   padding: 8px 16px;
 
   border-radius: 4px;
-  background: var(--mega-employee-ui-time-violation-alert-background);
+  background: var(--mega-employee-ui-time-violation-alert-background-color);
 }

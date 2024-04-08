@@ -2,8 +2,17 @@
 @use '@angular/material' as mat;
 
 @mixin theme($theme) {
-  $primary: #{mat.get-theme-color($theme, primary, default)};
-  $contrast: #{mat.get-theme-color($theme, primary, default-contrast)};
+  $primary: undefined;
+  $contrast: undefined;
+
+  // M3-Theme == 1
+  @if (mat.get-theme-version($theme) == 1) {
+    $primary: #{mat.get-theme-color($theme, primary)};
+    $contrast: #{mat.get-theme-color($theme, on-primary)};
+  } @else {
+    $primary: #{mat.get-theme-color($theme, primary, default)};
+    $contrast: #{mat.get-theme-color($theme, primary, default-contrast)};
+  }
 
   mat-button-toggle-group {
     --mat-standard-button-toggle-background-color: transparent;

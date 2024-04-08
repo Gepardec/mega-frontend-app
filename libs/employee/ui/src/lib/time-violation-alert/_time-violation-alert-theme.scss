@@ -5,11 +5,30 @@
 @mixin theme($theme) {
   @if mat.theme-has($theme, color) {
     mega-employee-ui-time-violation-alert {
-      $bg: mat.get-theme-color($theme, warn, default);
-      $text-color: mat.get-theme-color($theme, warn, default-contrast);
+      // M3-Theme == 1
+      @if (mat.get-theme-version($theme) == 1) {
+        $bg: mat.get-theme-color($theme, error-container);
+        $text-color: mat.get-theme-color($theme, on-error-container);
 
-      --mega-employee-ui-time-violation-alert-background: #{$bg};
-      --mega-employee-ui-time-violation-alert-text-color: #{$text-color};
+        // Emit a token for the background color
+        --mega-employee-ui-time-violation-alert-background-color: #{$bg};
+        --mega-employee-ui-time-violation-alert-text-color: #{$text-color};
+
+        // Override tokens of the chip component
+        --mdc-chip-outline-width: 0; // to remove a weird shade
+        --mdc-chip-label-text-color: #{$text-color}; // to accommodate the text color
+
+        .custom-typography {
+          $font: mat.get-theme-typography($theme, body-small, font);
+          font: #{$font};
+        }
+      } @else {
+        $bg: mat.get-theme-color($theme, warn, default);
+        $text-color: mat.get-theme-color($theme, warn, default-contrast);
+
+        --mega-employee-ui-time-violation-alert-background-color: #{$bg};
+        --mega-employee-ui-time-violation-alert-text-color: #{$text-color};
+      }
     }
   }
 }

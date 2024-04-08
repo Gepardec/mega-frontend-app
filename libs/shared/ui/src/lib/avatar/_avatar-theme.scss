@@ -7,13 +7,19 @@
   $theme,
   $options: (size: 36px, background: transparent, text-color: white)
 ) {
-  html {
+  mega-shared-ui-avatar {
     --shared-ui-avatar-background: #{map.get($options, background)};
     --shared-ui-avatar-size: #{map.get($options, size)};
     --shared-ui-text-color: #{map.get($options, text-color)};
 
     @if mat.theme-has($theme, color) {
-      $primary: mat.get-theme-color($theme, primary, text);
+      $primary: undefined;
+      // M3-Theme == 1
+      @if (mat.get-theme-version($theme) == 1) {
+        $primary: mat.get-theme-color($theme, primary);
+      } @else {
+        $primary: mat.get-theme-color($theme, primary, text);
+      }
       --shared-ui-avatar-border-color: #{$primary};
     }
   }

@@ -1,6 +1,6 @@
 <div class="mega-alert flex items-center gap-4">
   <mat-icon aria-hidden="false" aria-label="Error icon">error</mat-icon>
-  <span>{{ entry.msg || '' }}</span>
+  <span class="custom-typography">{{ entry.msg || '' }}</span>
   <section class="flex gap-2">
     @for (d of entry.dates || []; track d) {
       <mat-chip-set>

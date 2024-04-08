@@ -1,0 +1,74 @@
+@use '@angular/material' as mat;
+@use '@angular/material-experimental' as matx;
+
+@use '../../../../../libs/shared/ui/src' as ui-shared;
+@use '../../../../../libs/employee/ui/src' as ui-employee;
+@use 'themes/button-toggle-theme' as button-toggle;
+@use '../../../../../libs/ngx-gepardec-mat/src/lib/dynamic-table/dynamic-table-theme'
+  as gpx-dynamic-table;
+@use '../../../../../libs/ngx-gepardec-mat/src/lib/expandable-dynamic-table/expandable-dynamic-table-theme'
+  as gpx-expandable-dynamic-table;
+
+
+// ----------------------------------------------------------
+// M3 THEMING
+// ----------------------------------------------------------
+$mega-dark-theme: matx.define-theme((
+  color: (
+    theme-type: dark,
+    primary: matx.$m3-yellow-palette
+  ),
+  typography: (
+    plain-family: 'Barlow',
+    bold-weight: 900
+  ),
+  density: (
+    scale: 0
+  )
+));
+
+$mega-light-theme: matx.define-theme((
+  color: (
+    theme-type: light,
+    primary: matx.$m3-yellow-palette
+  ),
+  typography: (
+    plain-family: 'Barlow',
+    bold-weight: 900,
+  ),
+  density: (
+    scale: 0
+  )
+));
+
+html {
+  @include mat.all-component-themes($mega-dark-theme);
+
+  // Override color variant of all buttons
+  //@include mat.button-color($mega-dark-theme, $color-variant: error);
+
+  // Required if you still want to use color attribute on buttons (not supported in M3)
+  //@include matx.color-variants-back-compat($mega-dark-theme);
+}
+
+// ----------------------------------------------------------
+// APP THEMING
+// ----------------------------------------------------------
+html {
+  @include button-toggle.theme($mega-dark-theme);
+  @include ui-shared.avatar-theme($mega-dark-theme);
+  @include ui-employee.time-violation-alert-theme($mega-dark-theme);
+}
+
+// Override theme under mega-employee-feature-employee-feature
+//mega-employee-feature-employee-feature {
+//  @include mat.all-component-themes($mega-light-theme);
+//}
+
+// ----------------------------------------------------------
+// NGX-GEPARDEC-MAT THEMING
+// ----------------------------------------------------------
+html {
+  @include gpx-dynamic-table.theme($mega-dark-theme);
+  @include gpx-expandable-dynamic-table.theme($mega-dark-theme);
+}
